@@ -1495,7 +1495,7 @@ export default function StudioPuffer() {
               </button>
 			  {aiEnabled && (
                 <button className="btn-ai" disabled={aiLoading} onClick={handleAiEnhance}
-                  title="Melhorar imagem com Inteligência Artificial (Cloudflare Workers AI)">
+                  title="Melhorar imagem com Inteligência Artificial">
                   {aiLoading
                     ? <><span className="ai-spinner"/>Aguarde…</>
                     : <>✨ Melhorar com IA</>}
@@ -1545,8 +1545,7 @@ export default function StudioPuffer() {
                     <div className="ai-big-spinner"/>
                     <p className="ai-loading-text">Gerando versão melhorada…</p>
                     <p className="ai-loading-sub">
-                      Cloudflare Workers AI ({"`"}@cf/runwayml/stable-diffusion-v1-5-img2img{"`"})<br/>
-                      está processando sua bolsa. Aguarde alguns segundos.
+                      Estamos melhorando a imagem... Aguarde alguns segundos.
                     </p>
                   </div>
                 )}
