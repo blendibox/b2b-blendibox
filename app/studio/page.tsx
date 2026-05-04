@@ -416,7 +416,7 @@ export default function StudioPuffer() {
           w.cv["onRuntimeInitialized"] = () => {
             if (!cancelled) {
               setCvReady(true)
-              setStatus("ready", "OpenCV pronto — faça o upload da sua imagem")
+              setStatus("ready", "Pronto — faça o upload da sua imagem")
             }
           }
         }

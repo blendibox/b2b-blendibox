@@ -83,7 +83,7 @@ export default function LandingPage() {
       <section className="benefits">
         <div className="section-header">
           <div className="section-label">Vantagens Exclusivas</div>
-          <h2 className="section-title">Por que escolher a Blendibox para seu Projeto?</h2>
+          <h2 className="section-title">Por quê escolher a Blendibox para seu Projeto?</h2>
         </div>
 
 		
@@ -112,7 +112,7 @@ export default function LandingPage() {
           <span className="hero-label">Expresse sua idéia</span>
           <h1>Personalizado de Verdade!</h1>
           <p className="hero-subtitle">
-            Use nossa ferramenta para dar asas a sua imaginação!
+            Use nossa ferramenta para dar asas à sua imaginação!
           </p>
           
           <div className="hero-stats">
@@ -151,7 +151,7 @@ export default function LandingPage() {
 			<div style={{marginTop: 10 + 'em'}}></div>
 		     <div className="section-header">
 			    
-             <h3 className="section-title">Aqui, sua Criatividade vira Peça Exclusiva!</h3>
+             <h3 className="section-title">Aqui, sua criatividade vira peça exclusiva!</h3>
 			 <div className="section-label" style={{marginTop: 2 + 'em'}}>Veja Alguns Exemplos:</div>
            </div>
 		
