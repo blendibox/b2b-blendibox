@@ -1,0 +1,52 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+
+export default function VideoAutoPlay2() {
+const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          if (video.paused) {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {
+                // Ignora AbortError silenciosamente
+              });
+            }
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, []);
+
+
+  return (
+    <video
+      ref={videoRef}
+      src="/video/pufferstudio.mp4"
+      muted
+      playsInline
+      controls
+	  preload="metadata"
+      style={{ width: "100%", borderRadius: "12px" }}
+    />
+  );
+}

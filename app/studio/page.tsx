@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState, useCallback } from "react"
 import Script from "next/script"
 
+import Footer from "../Footer";
+import Menu from "../Menu";
+
 /* ═══════════════════════════════════════════════
    TYPES
 ═══════════════════════════════════════════════ */
@@ -24,7 +27,7 @@ interface BagColor {
    STATIC CONFIG
 ═══════════════════════════════════════════════ */
 const BAG_MODELS: BagModel[] = [
-  { id: "tote",      name: "Tote Grande",   dims: "40 × 35 cm", icon: "👜", imgUrl: "/images/bolsa_maxi_tote.png" },
+  { id: "tote",      name: "Maxi Tote",   dims: "40 × 35 cm", icon: "👜", imgUrl: "/images/bolsa_maxi_tote.png" },
   { id: "shoulder",  name: "Maxi Puffer",  dims: "30 × 30 cm", icon: "👛", imgUrl: "/images/maxi_puffer.png" },
   { id: "crossbody", name: "Notebook",   dims: "48 × 36 cm", icon: "💼", imgUrl: "/images/bolsanotebook.png" },
   { id: "mini",      name: "Mini Bag",      dims: "25 × 20 cm", icon: "👝", imgUrl: null },
@@ -32,19 +35,33 @@ const BAG_MODELS: BagModel[] = [
 
 const BAG_COLORS: BagColor[] = [
   { hex: "#39161b", label: "Marrom",  grad: ["#39161b", "#39161b"] },
+  { hex: "#5d4934", label: "Marrom Terra",  grad: ["#5d4934", "#5d4934"] }, 
   { hex: "#39083a", label: "Bergamota",  grad: ["#39083a", "#39083a"] },
   { hex: "#b30037", label: "Vermelho Cherry",    grad: ["#b30037", "#b30037"] },
+  { hex: "#7d161d", label: "Vermelho Vinho",    grad: ["#7d161d", "#7d161d"] },
   { hex: "#cfc2dd", label: "Lilás",       grad: ["#cfc2dd", "#cfc2dd"] },
-  { hex: "#b0d7f1", label: "Azul Bebê",  grad: ["#b0d7f1", "#b0d7f1"] },
   { hex: "#f5dd6a", label: "Amarelo Gema",     grad: ["#f5dd6a", "#f5dd6a"] },
+  { hex: "#f1e731", label: "Amarelo Limão",  grad: ["#f1e731", "#f1e731"] },
+  { hex: "#ba9221", label: "Mostarda",  grad: ["#ba9221", "#ba9221"] }, 
+  { hex: "#80e14f", label: "Verde Flúor",  grad: ["#80e14f", "#80e14f"] },
   { hex: "#3b4625", label: "Verde Oliva", grad: ["#3b4625", "#3b4625"] },
-  { hex: "#094b28", label: "Verde Bandeira", grad: ["#094b28", "#094b28"] },
+  { hex: "#27744b", label: "Verde Bandeira", grad: ["#27744b", "#27744b"] },
+  { hex: "#fa656f", label: "Rosa Chiclete",     grad: ["#fa656f", "#fa656f"] },
   { hex: "#e6bfbf", label: "Rosa Pêssego",     grad: ["#e6bfbf", "#e6bfbf"] },
+  { hex: "#d3806c", label: "Rosa Goiaba",     grad: ["#d3806c", "#d3806c"] },
   { hex: "#ddb1cb", label: "Rosa bebê",         grad: ["#ddb1cb", "#ddb1cb"] },
   { hex: "#d4c0b6", label: "Areia",     grad: ["#d4c0b6", "#d4c0b6"] },
   { hex: "#F5F5F5", label: "Branco",   grad: ["#FFFFFF", "#E5E5E5"] },
+  { hex: "#efede1", label: "Off White",   grad: ["#efede1", "#efede1"] },
+  { hex: "#e6e6ec", label: "Ice",   grad: ["#e6e6ec", "#e6e6ec"] },
+  { hex: "#b1c7bf", label: "Lácteo",   grad: ["#b1c7bf", "#b1c7bf"] },
   { hex: "#11132a", label: "Azul Marinho",       grad: ["#0d1025", "#11132a"] },
+  { hex: "#23324d", label: "Azul Índigo",  grad: ["#23324d", "#23324d"] },
+  { hex: "#58b1d0", label: "Azul Turqueza",  grad: ["#58b1d0", "#58b1d0"] },
+  { hex: "#b0d7f1", label: "Azul Bebê",  grad: ["#b0d7f1", "#b0d7f1"] },
   { hex: "#181717", label: "Preto",       grad: ["#040505", "#040505"] },
+  { hex: "#abada6", label: "Silver",       grad: ["#abada6", "#abada6"] },
+  { hex: "#706e6b", label: "Dusty Grey",       grad: ["#706e6b", "#706e6b"] },
 ]
 
 /* ═══════════════════════════════════════════════
@@ -255,7 +272,85 @@ function drawMiniThumb(
   c.style.width = "100%"; c.style.height = "100%"
   el.appendChild(c)
   const ctx = c.getContext("2d")!
-  drawBagShape(ctx, 120, 120, model.id, color, null, 0, 0, 0.95, 2)
+  drawBagShape(ctx, 120, 120, model.id, color, null, 0, 0, 0.95, 2,1)
+}
+
+
+
+
+/* ─────────────────────────────────────────────
+   drawColoredBagImage
+   O PNG original tem fundo BEGE sólido (alpha=255
+   em tudo). Precisamos separar bolsa do fundo
+   pelo brilho:
+     • Pixels escuros (brilho < 150) = bolsa
+       → pintar com a cor escolhida
+     • Pixels de transição (150-190) = borda suave
+       → pintar com a cor + alpha proporcional
+     • Pixels claros (brilho >= 190) = fundo
+       → deixar bege
+───────────────────────────────────────────── */
+function drawColoredBagImage(
+  ctx: CanvasRenderingContext2D,
+  bagImg: HTMLImageElement,
+  W: number,
+  H: number,
+  color: BagColor
+) {
+  // Canvas auxiliar para ler pixels do PNG original
+  const tmp = document.createElement("canvas")
+  tmp.width = W; tmp.height = H
+  const tctx = tmp.getContext("2d")!
+  tctx.drawImage(bagImg, 0, 0, W, H)
+
+  const src = tctx.getImageData(0, 0, W, H)
+  const s = src.data
+
+  // Canvas de saída — começa totalmente transparente
+  const out = document.createElement("canvas")
+  out.width = W; out.height = H
+  const octx = out.getContext("2d")!
+  const outData = octx.createImageData(W, H)
+  const d = outData.data
+
+  const [tr, tg, tb] = hexToRGB(color.hex)
+  const THRESH = 150
+  const FADE   = 190
+
+  for (let i = 0; i < s.length; i += 4) {
+    const brightness = (s[i] + s[i+1] + s[i+2]) / 3
+
+    if (brightness < THRESH) {
+      // Pixel da bolsa → cor escolhida, totalmente opaco
+      d[i]   = tr
+      d[i+1] = tg
+      d[i+2] = tb
+      d[i+3] = 255
+    } 
+	
+	else if (brightness < FADE) {
+      // Borda suave → cor escolhida com alpha proporcional
+      const alpha = Math.round((FADE - brightness) / (FADE - THRESH) * 255)
+      d[i]   = tr
+      d[i+1] = tg
+      d[i+2] = tb
+      d[i+3] = alpha
+    }
+     //else: fundo claro → permanece [234,226,214,1] bege ( [0,0,0,0] transparente)
+	 
+	 else if (brightness >= FADE) {
+      //[234,226,214,1] bege 
+      d[i]   = 234
+      d[i+1] = 226
+      d[i+2] = 214
+      d[i+3] = 1
+    }
+  }
+
+  octx.putImageData(outData, 0, 0)
+
+  // Desenha o resultado colorido no canvas principal
+  ctx.drawImage(out, 0, 0)
 }
 
 /* ═══════════════════════════════════════════════
@@ -276,6 +371,14 @@ export default function StudioPuffer() {
   const [showHint, setShowHint]     = useState(false)
   const [hintDismissed, setHintDismissed] = useState(false)
 
+  // ── IA Enhance ──
+  const [aiEnabled, setAiEnabled]     = useState(false)
+  const [aiLoading, setAiLoading]     = useState(false)
+  const [aiResult, setAiResult]       = useState<string | null>(null)
+  const [showAiModal, setShowAiModal] = useState(false)
+  const [aiError, setAiError]         = useState<string | null>(null)
+  const lastBlobRef = useRef<Blob | null>(null)
+  
   /* Controls */
   const [t1, setT1]         = useState(80)
   const [t2, setT2]         = useState(160)
@@ -308,7 +411,7 @@ export default function StudioPuffer() {
       if (typeof w.cv !== "undefined") {
         if (w.cv.Mat) {
           setCvReady(true)
-          setStatus("ready", "OpenCV pronto — faça o upload da sua imagem")
+          setStatus("ready", "Pronto — faça o upload da sua imagem")
         } else {
           w.cv["onRuntimeInitialized"] = () => {
             if (!cancelled) {
@@ -447,7 +550,7 @@ export default function StudioPuffer() {
     const sizes: Record<string, { w: number; h: number }> = {
       tote:      { w: 760, h: 800 },
       shoulder:  { w: 710, h: 760 },
-      crossbody: { w: 460, h: 510 },
+      crossbody: { w: 710, h: 760 },
       mini:      { w: 400, h: 460 },
     }
     const sz = sizes[selectedModel.id] || sizes.tote
@@ -488,27 +591,112 @@ export default function StudioPuffer() {
     }
   }
 
-  /* ── Download ── */
+    /* ── Download ── */
   function handleDownload() {
-    const src = bagCanvasRef.current
-    if (!src) return
+    if (!selectedModel.imgUrl) {
+      // Modelos sem foto: baixa direto do canvas de preview
+      const src = bagCanvasRef.current
+      if (!src) return
+      const hc = document.createElement("canvas")
+      hc.width = src.width * 2; hc.height = src.height * 2
+      const hctx = hc.getContext("2d")!
+      hctx.scale(2, 2); hctx.drawImage(src, 0, 0)
+      hc.toBlob((blob) => {
+        if (!blob) return
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement("a")
+        a.download = `studio-puffer-${selectedModel.id}-${Date.now()}.png`
+        a.href = url; a.click()
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+      }, "image/png", 1.0)
+      return
+    }
+
+    // Modelos com foto PNG: renderiza versão limpa (fundo transparente) para download
+    const sz = { tote: {w:760,h:800}, shoulder:{w:710,h:760}, crossbody:{w:460,h:510}, mini:{w:400,h:460} }
+    const s = (sz as any)[selectedModel.id] || sz.tote
+    const sc = scale / 100
+
     const hc = document.createElement("canvas")
-    hc.width  = src.width  * 2
-    hc.height = src.height * 2
+    hc.width = s.w * 2; hc.height = s.h * 2
     const hctx = hc.getContext("2d")!
     hctx.scale(2, 2)
-    hctx.drawImage(src, 0, 0)
-    hc.toBlob((blob) => {
-      if (!blob) return
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      a.download = `studio-puffer-${selectedModel.id}-${Date.now()}.png`
-      a.href = url
-      a.click()
-      setTimeout(() => URL.revokeObjectURL(url), 1000)
-    }, "image/png", 1.0)
+    const bagImg = new Image()
+    bagImg.onload = () => {
+      // Para download: usa pixel-a-pixel para fundo transparente
+      drawColoredBagImage(hctx, bagImg, s.w, s.h, selectedColor)
+      if (edgeDataRef.current) {
+        overlayEmbroidery(hctx, s.w, s.h, sc, posX, posY, lineW, selectedColor, edgeDataRef.current)
+      }
+      hc.toBlob((blob) => {
+        if (!blob) return;
+		console.log("gerou blob");
+	    console.log(blob);
+		lastBlobRef.current = blob   // guarda para enviar à IA
+        setAiEnabled(true)
+        setAiResult(null)
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement("a")
+        a.download = `studio-puffer-${selectedModel.id}-${Date.now()}.png`
+        a.href = url; a.click()
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+      }, "image/png", 1.0)
+    }
+    bagImg.src = selectedModel.imgUrl
   }
+ /* ── IA Enhance ── */
+  async function handleAiEnhance() {
+	  
+    if (!lastBlobRef.current) return
+	
+    setAiLoading(true); 
+	setAiError(null); 
+	setAiResult(null); 
+	setShowAiModal(true)
+					
+					 
+						
+    try {
 
+	  const API_KEY = process.env.API_KEY;
+	  const formData = new FormData();
+	  formData.append("image", lastBlobRef.current);
+	  //formData.append("prompt", prompt);
+
+      // Chama o Worker Cloudflare diretamente
+	  
+	  
+      const res = await fetch("https://blendibox-studio.blendibox.workers.dev/", {
+         method: "POST",
+		  headers: {
+			Authorization: `Bearer ${API_KEY}`
+		  },
+		  body: formData
+      })
+
+        if (!res.ok) {
+		  const errText = await res.text()
+		  throw new Error(`Erro ${res.status}: ${errText}`)
+		}
+
+		const blob = await res.blob()
+		const url = URL.createObjectURL(blob)
+
+		setAiResult(url)
+
+	  } catch (e: any) {
+		setAiError(e.message || "Erro ao processar com IA")
+	  } finally {
+		setAiLoading(false)
+	  }
+  }
+  function handleAiDownload() {
+    if (!aiResult) return
+    const a = document.createElement("a")
+    a.download = `blendibox-ai-${selectedModel.id}-${Date.now()}.png`
+    a.href = aiResult
+    a.click()
+  }
   /* ── Reset ── */
   function handleReset() {
     setT1(80); setT2(160); setLineW(2)
@@ -534,6 +722,7 @@ export default function StudioPuffer() {
         strategy="afterInteractive"
       />
 
+     
       <style>{`
         /* ── Reset ── */
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -566,6 +755,7 @@ export default function StudioPuffer() {
 
         /* ── Header ── */
         header {
+	      margin-top:100px;		
           position:relative; z-index:2;
           display:flex; align-items:center; justify-content:space-between;
           padding:.6rem 1.5rem;
@@ -613,19 +803,25 @@ export default function StudioPuffer() {
           gap:clamp(.5rem,1vh,1.2rem);
           max-width:1600px; margin:0 auto;
           padding:clamp(.4rem,.8vh,.9rem) 1.2rem;
+          /* Ocupa a tela sem ultrapassar — cresce se precisar */
           height:calc(100dvh - 56px);
+          min-height:500px;
           box-sizing:border-box;
+          /* overflow visível no eixo X, oculto no Y para não vazar */
           overflow:hidden;
           background:var(--bg);
         }
 
         /* ── Sidebar ── */
         .sidebar-wrap {
-          height:100%; position:relative;
+          height:100%; min-height:0; position:relative;
           display:flex; flex-direction:column;
+          /* contém a sidebar sem vazar para fora do workspace */
+          overflow:hidden;
         }
         .sidebar {
-          flex:1; overflow-y:auto; overflow-x:hidden;
+          flex:1; min-height:0;
+          overflow-y:auto; overflow-x:hidden;
           scrollbar-width:thin; scrollbar-color:var(--bdr) transparent;
           padding-right:4px; padding-bottom:.5rem;
         }
@@ -852,8 +1048,11 @@ export default function StudioPuffer() {
           border:1px solid var(--bdr2); border-top:3px solid var(--pk);
           border-radius:var(--r);
           padding:clamp(.5rem,1.2vh,1.2rem) 1.4rem;
-          height:100%; display:flex; flex-direction:column;
+          /* height:100% + min-height:0 = ocupa o espaço sem vazar */
+          height:100%; min-height:0;
+          display:flex; flex-direction:column;
           box-shadow:0 2px 16px rgba(0,0,0,.06);
+          overflow:hidden;
         }
         .preview-panel .panel-head { margin-bottom:.8rem; }
         .preview-stage {
@@ -902,6 +1101,15 @@ export default function StudioPuffer() {
         /* ══════════════════════════════════
            RESPONSIVO
         ══════════════════════════════════ */
+
+        /* Telas grandes: sidebar um pouco maior */
+        @media (min-width: 1400px) {
+          .workspace { grid-template-columns: 420px 1fr; }
+        }
+        @media (min-width: 1800px) {
+          .workspace { grid-template-columns: 460px 1fr; }
+        }
+
         @media (max-width: 1100px) {
           .workspace { grid-template-columns: 340px 1fr; gap:.8rem; padding:.7rem 1rem; }
         }
@@ -922,6 +1130,24 @@ export default function StudioPuffer() {
           .preview-stage { min-height:44vw; max-height:60vw; }
           .sidebar-footer { position:static; }
         }
+
+        /* Telas com pouca altura (laptops pequenos) */
+        @media (max-height: 700px) and (min-width: 861px) {
+          .workspace {
+            height:calc(100dvh - 56px);
+            padding:.4rem .9rem;
+            gap:.4rem;
+          }
+          .panel { padding:.5rem .9rem; margin-bottom:.4rem; }
+          .panel-head { margin-bottom:.4rem; padding-bottom:.3rem; }
+          .ctrl-group { margin-bottom:.4rem; }
+          .upload-zone { padding:.6rem .8rem; }
+          .upload-zone .ic { font-size:1.3rem; margin-bottom:.1rem; }
+          .model-dims { display:none; }
+          #thumbPreview { max-height:70px; }
+        }
+
+        /* Telas com pouca altura (laptops) */
 
         @media (max-width: 600px) {
           header { padding:.5rem .9rem; height:48px; }
@@ -959,6 +1185,110 @@ export default function StudioPuffer() {
           .model-card { padding:.3rem .2rem; }
           .btn-dl { font-size:.72rem; letter-spacing:0; }
         }
+	        /* ══ Botão IA ══ */
+        .btn-ai {
+          display:inline-flex; align-items:center; gap:.45rem;
+          padding:.65rem 1.1rem;
+          background:linear-gradient(135deg,#7C3AED,#4F46E5);
+          color:#fff; border:none; border-radius:2px; cursor:pointer;
+          font-weight:700; font-size:.8rem; letter-spacing:.4px;
+          text-transform:uppercase;
+          box-shadow:0 4px 18px rgba(124,58,237,.35),inset 0 1px 0 rgba(255,255,255,.2);
+          transition:all .3s; position:relative; overflow:hidden; flex-shrink:0;
+        }
+        .btn-ai::before {
+          content:''; position:absolute; top:0; left:-100%;
+          width:100%; height:100%;
+          background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+          transition:left .5s;
+        }
+        .btn-ai:not(:disabled):hover::before { left:100%; }
+        .btn-ai:not(:disabled):hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(124,58,237,.5); }
+        .btn-ai:disabled { opacity:.4; cursor:not-allowed; }
+        .ai-spinner {
+          width:13px; height:13px; flex-shrink:0;
+          border:2px solid rgba(255,255,255,.3);
+          border-top-color:#fff; border-radius:50%;
+          animation:spin .6s linear infinite;
+        }
+
+        /* ══ Modal IA ══ */
+        .ai-modal-overlay {
+          position:fixed; inset:0; z-index:9000;
+          background:rgba(15,10,20,.7); backdrop-filter:blur(6px);
+          display:flex; align-items:center; justify-content:center;
+          padding:1.5rem; animation:fadeInModal .25s ease;
+        }
+        @keyframes fadeInModal { from{opacity:0} to{opacity:1} }
+        .ai-modal {
+          background:#fff; border-radius:8px; width:100%; max-width:860px;
+          box-shadow:0 24px 80px rgba(0,0,0,.3); overflow:hidden;
+          animation:slideUpModal .3s cubic-bezier(.16,1,.3,1);
+        }
+        @keyframes slideUpModal { from{transform:translateY(30px);opacity:0} to{transform:none;opacity:1} }
+        .ai-modal-header {
+          display:flex; align-items:center; justify-content:space-between;
+          padding:.9rem 1.3rem;
+          border-bottom:1px solid rgba(139,115,85,.15);
+          background:linear-gradient(135deg,#F5F1ED,#EDE8E2);
+        }
+        .ai-modal-title {
+          display:flex; align-items:center; gap:.55rem;
+          font-family:'Playfair Display',serif;
+          font-size:1.1rem; font-weight:700; color:#1a1a1a;
+        }
+        .ai-badge {
+          background:linear-gradient(135deg,#7C3AED,#4F46E5);
+          color:#fff; font-size:.62rem; font-weight:800;
+          padding:.14rem .42rem; border-radius:3px; letter-spacing:.05em;
+        }
+        .ai-modal-close {
+          background:none; border:none; cursor:pointer;
+          font-size:1.3rem; color:#666; padding:.2rem .5rem;
+          border-radius:4px; transition:all .2s; line-height:1;
+        }
+        .ai-modal-close:hover { background:rgba(0,0,0,.08); color:#1a1a1a; }
+        .ai-modal-body { padding:1.2rem; }
+        .ai-compare {
+          display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+        }
+        .ai-compare-item { display:flex; flex-direction:column; gap:.5rem; }
+        .ai-compare-label {
+          font-size:.72rem; font-weight:700; text-transform:uppercase;
+          letter-spacing:.06em; color:#8B7355;
+          display:flex; align-items:center; gap:.4rem;
+        }
+        .ai-compare-label span {
+          display:inline-block; width:8px; height:8px; border-radius:50%;
+        }
+        .ai-compare-img {
+          width:100%; aspect-ratio:1; object-fit:contain;
+          border-radius:6px; border:1px solid rgba(139,115,85,.15); background:#F5F1ED;
+        }
+        .ai-loading-area {
+          display:flex; flex-direction:column; align-items:center;
+          justify-content:center; gap:1rem; padding:2.5rem 1rem; grid-column:1/-1;
+        }
+        .ai-big-spinner {
+          width:48px; height:48px;
+          border:3px solid rgba(124,58,237,.15);
+          border-top-color:#7C3AED; border-radius:50%;
+          animation:spin .8s linear infinite;
+        }
+        .ai-loading-text { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600; color:#1a1a1a; }
+        .ai-loading-sub  { font-size:.82rem; color:#666; text-align:center; line-height:1.5; }
+        .ai-error { grid-column:1/-1; text-align:center; padding:2rem 1rem; }
+        .ai-error-icon { font-size:2.2rem; margin-bottom:.6rem; }
+        .ai-error p    { color:#ef4444; font-weight:600; }
+        .ai-error small{ display:block; color:#888; margin-top:.3rem; font-size:.82rem; }
+        .ai-modal-footer {
+          display:flex; align-items:center; justify-content:flex-end; gap:.65rem;
+          padding:.8rem 1.3rem; border-top:1px solid rgba(139,115,85,.15); background:#FAFAF8;
+        }
+        @media (max-width:580px) {
+          .ai-compare { grid-template-columns:1fr; }
+          .ai-modal-body { padding:.8rem; }
+        }							
       `}</style>
 
       {/* Hidden OpenCV canvases */}
@@ -967,6 +1297,7 @@ export default function StudioPuffer() {
 
       <div className="bg-mesh" />
 
+   <Menu/>
       {/* ── Header ── */}
       <header>
         <div className="logo-row">
@@ -1121,7 +1452,7 @@ export default function StudioPuffer() {
             <div className="panel">
               <div className="panel-head">
                 <div className="step-badge">4</div>
-                <h2>Cor do Produto</h2>
+                <h2>Escolha a Cor</h2>
               </div>
               <div className="swatch-grid" id="swatchGrid">
                 {BAG_COLORS.map((c) => (
@@ -1162,7 +1493,15 @@ export default function StudioPuffer() {
               <button className="btn-dl" disabled={!dlEnabled} onClick={handleDownload}>
                 💾 Baixar Preview
               </button>
-              <button className="btn-sec" onClick={handleReset}>↺</button>
+			  {aiEnabled && (
+                <button className="btn-ai" disabled={aiLoading} onClick={handleAiEnhance}
+                  title="Melhorar imagem com Inteligência Artificial (Cloudflare Workers AI)">
+                  {aiLoading
+                    ? <><span className="ai-spinner"/>Aguarde…</>
+                    : <>✨ Melhorar com IA</>}
+                </button>
+              )}				
+           <button className="btn-sec" onClick={handleReset}>↺</button>
             </div>
 			</div>
 			
@@ -1185,12 +1524,96 @@ export default function StudioPuffer() {
         </div>
 
       </div>{/* /workspace */}
+  {/* ══ Modal IA — comparação antes × depois ══ */}
+      {showAiModal && (
+        <div className="ai-modal-overlay"
+          onClick={(e) => { if (e.target === e.currentTarget) setShowAiModal(false) }}>
+          <div className="ai-modal">
+            <div className="ai-modal-header">
+              <div className="ai-modal-title">
+                <span className="ai-badge">AI</span>
+                Melhorado com Cloudflare Workers AI
+              </div>
+              <button className="ai-modal-close" onClick={() => setShowAiModal(false)}>✕</button>
+            </div>
 
+            <div className="ai-modal-body">
+              <div className="ai-compare">
+
+                {aiLoading && (
+                  <div className="ai-loading-area">
+                    <div className="ai-big-spinner"/>
+                    <p className="ai-loading-text">Gerando versão melhorada…</p>
+                    <p className="ai-loading-sub">
+                      Cloudflare Workers AI ({"`"}@cf/runwayml/stable-diffusion-v1-5-img2img{"`"})<br/>
+                      está processando sua bolsa. Aguarde alguns segundos.
+                    </p>
+                  </div>
+                )}
+
+                {!aiLoading && aiError && (
+                  <div className="ai-error">
+                    <div className="ai-error-icon">⚠️</div>
+                    <p>{aiError}</p>
+                    <small>Verifique o Worker e tente novamente.</small>
+                  </div>
+                )}
+
+                {!aiLoading && !aiError && aiResult && (
+                  <>
+                    <div className="ai-compare-item">
+                      <div className="ai-compare-label">
+                        <span style={{background:"#D4A574"}}/>Original
+                      </div>
+                      <canvas
+                        className="ai-compare-img"
+                        ref={(el) => {
+                          if (!el || !bagCanvasRef.current) return
+                          el.width  = bagCanvasRef.current.width
+                          el.height = bagCanvasRef.current.height
+                          el.getContext("2d")!.drawImage(bagCanvasRef.current, 0, 0)
+                        }}
+                      />
+                    </div>
+                    <div className="ai-compare-item">
+                      <div className="ai-compare-label">
+                        <span style={{background:"#7C3AED"}}/>Melhorado com IA
+                      </div>
+                      <img src={aiResult} alt="Resultado IA" className="ai-compare-img"/>
+                    </div>
+                  </>
+                )}
+
+              </div>
+            </div>
+
+            {!aiLoading && !aiError && aiResult && (
+              <div className="ai-modal-footer">
+                <button className="btn-sec" onClick={() => setShowAiModal(false)}>Fechar</button>
+                <button className="btn-ai" onClick={handleAiDownload}>
+                  💾 Baixar Versão IA
+                </button>
+              </div>
+            )}
+            {!aiLoading && aiError && (
+              <div className="ai-modal-footer">
+                <button className="btn-sec" onClick={() => setShowAiModal(false)}>Fechar</button>
+                <button className="btn-ai" onClick={handleAiEnhance}>🔄 Tentar novamente</button>
+              </div>
+            )}
+          </div>
+		  
+		   
+        </div>
+		
+      )}							   
+			<Footer/>					   
       {/* Loading overlay */}
       <div id="loadingOverlay" className={loading ? "show" : ""}>
         <div className="spinner" />
         <p>{loadingMsg}</p>
       </div>
+	 
     </>
   )
 }

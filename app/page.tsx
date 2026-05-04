@@ -2,6 +2,11 @@
 
 import React, { useEffect } from 'react';
 
+import VideoAutoPlay from "./VideoAutoPlay";
+import VideoAutoPlay2 from "./VideoAutoPlay2";
+import Footer from "./Footer";
+import Menu from "./Menu";
+
 export default function LandingPage() {
   
   // Função para Scroll Suave (substitui o onclick nativo)
@@ -30,15 +35,7 @@ export default function LandingPage() {
 
   return (
     <main>
-      {/* Navegação */}
-      <nav className="nav">
-        <div className="nav-container">
-          <div className="logo">BLENDIBOX</div>
-          <button className="nav-cta" onClick={scrollToContact}>
-            SOLICITAR ORÇAMENTO
-          </button>
-        </div>
-      </nav>
+      <Menu/>
 
       {/* Hero Section */}
       <section className="hero">
@@ -46,7 +43,7 @@ export default function LandingPage() {
           <span className="hero-label">Soluções B2B</span>
           <h1>Bolsas personalizadas que fortalecem sua marca</h1>
           <p className="hero-subtitle">
-            Transforme bolsas puffer em poderosas ferramentas de branding para sua empresa, evento ou marca pessoal.
+            Transforme Bolsas Puffer em poderosas ferramentas de branding para sua empresa, evento ou marca pessoal.
           </p>
           
           <div className="hero-stats">
@@ -55,13 +52,15 @@ export default function LandingPage() {
               <div className="stat-label">Pedido Mínimo</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">15</div>
-              <div className="stat-label">Dias Úteis</div>
+              <div className="stat-number">+-15</div>
+              <div className="stat-label">Dias Úteis*</div>
+			 
             </div>
             <div className="stat-item">
               <div className="stat-number">100%</div>
-              <div className="stat-label">Personalizável</div>
+              <div className="stat-label">Arte Personalizável</div>
             </div>
+			 <small>*Verifique prazo no orçamento.</small>
           </div>
 
           <button className="hero-cta" onClick={scrollToContact}>
@@ -70,7 +69,9 @@ export default function LandingPage() {
         </div>
 
         <div className="hero-image">
-          <div className="hero-image-main"></div>
+          <div className="hero-image-main">
+		  <VideoAutoPlay/>
+		  </div>
           <div className="hero-badge">
             <div className="badge-text">Cases de Sucesso</div>
             <div className="badge-subtext">Mboom, Fitaup, Pamby Pamela e outras marcas já confiam na Blendibox</div>
@@ -82,14 +83,15 @@ export default function LandingPage() {
       <section className="benefits">
         <div className="section-header">
           <div className="section-label">Vantagens Exclusivas</div>
-          <h2 className="section-title">Por que escolher a Blendibox para seu projeto B2B?</h2>
+          <h2 className="section-title">Por que escolher a Blendibox para seu Projeto?</h2>
         </div>
-        
+
+		
         <div className="benefits-grid">
           {[
-            { icon: "🎨", title: "Personalização Total", text: "Cores customizadas, bordados, patches e mais." },
-            { icon: "⚡", title: "Produção Ágil", text: "Entrega garantida em 15-20 dias úteis." },
-            { icon: "💎", title: "Qualidade Premium", text: "Materiais duráveis e acabamento impecável." },
+		    { icon: "💎", title: "Alto Valor Percebido", text: "Ideal para Press Kits, Eventos e ações de Marketing" },
+            { icon: "⚡", title: "Trend", text: "Transformamos sua marca em uma Bolsa Puffer Viral" },
+            { icon: "🎨", title: "Artesanal", text: "Do seu logo à bolsa pronta,tudo feito por pessoas!" },          
             { icon: "📦", title: "Pedido Mínimo", text: "A partir de apenas 50 unidades." }
           ].map((benefit, index) => (
             <div key={index} className="benefit-card reveal">
@@ -99,23 +101,79 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-      </section>
+		<div style={{marginTop: 6 + 'em'}}>
+	
+		
+		
+		
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <span className="hero-label">Expresse sua idéia</span>
+          <h1>Personalizado de Verdade!</h1>
+          <p className="hero-subtitle">
+            Use nossa ferramenta para dar asas a sua imaginação!
+          </p>
+          
+          <div className="hero-stats">
+            <div className="stat-item">
+              <div className="stat-number">Passo 1</div>
+              <div className="stat-label">Suba a imagem Principal</div>
+            </div>
+			<div className="stat-item">
+              <div className="stat-number">Passo 2</div>
+              <div className="stat-label">Posicione a sua Arte</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">Passo 3</div>
+              <div className="stat-label">Escolha a Bolsa e Cor</div>
+            </div>
+            
+          </div>
 
-      {/* Seção Final de Contato */}
-      <section className="cta-final" id="contato">
-        <div className="cta-final-content">
-          <h2>Pronto para criar bolsas que representam sua marca?</h2>
-          <p>Entre em contato agora e receba uma proposta personalizada em até 48 horas.</p>
-          <a href="mailto:contato@blendibox.com.br" className="cta-final-button">FALAR COM ESPECIALISTA</a>
+          <button className="hero-cta" >
+            <a href='/studio'>ACESSAR PUFFER STUDIO  <span>→</span></a>
+          </button>
+        </div>
+
+        <div className="hero-image">
+          <div className="hero-image-main">
+		  	<VideoAutoPlay2/>
+		  </div>
+          <div className="hero-badge">
+            <div className="badge-text">Use sua Criatividade</div>
+            <div className="badge-subtext">Faça um teste de como ficará sua bolsa</div>
+          </div>
+        </div>
+      </section>
+		
+		</div>
+			<div style={{marginTop: 10 + 'em'}}></div>
+		     <div className="section-header">
+			    
+             <h3 className="section-title">Aqui, sua Criatividade vira Peça Exclusiva!</h3>
+			 <div className="section-label" style={{marginTop: 2 + 'em'}}>Veja Alguns Exemplos:</div>
+           </div>
+		
+		  <div className="benefits-grid">
+          {[
+		    { icon: "💎", title: "Maxi Tote Vermelha", text: "./images/maxitote_vermelha.png" },
+            { icon: "⚡", title: "Maxi Tote Lilás", text: "./images/maxitote_lilas.png" },
+			{ icon: "📦", title: "Maxi Tote Verde", text: "./images/maxitote_verde.jpg" },
+            { icon: "🎨", title: "Maxi Puffer Lilás", text: "./images/maxipuffer_lilas.jpg" }         
+           
+          ].map((benefit, index) => (
+            <div key={index} className="benefit-card reveal">
+              <h3 className="benefit-title">{benefit.title}</h3>
+              <img src={benefit.text}></img>
+            </div>
+          ))}
         </div>
       </section>
 
-      <footer className="footer">
-         <div className="footer-container">
-            <div className="footer-logo">BLENDIBOX</div>
-            <p>© 2026 Blendibox. Todos os direitos reservados.</p>
-         </div>
-      </footer>
+     
+
+    <Footer/>
     </main>
   );
 }
