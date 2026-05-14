@@ -12,7 +12,7 @@ export default function Footer() {
 	 {/* Seção Final de Contato */}
       <section className="cta-final" id="contato">
         <div className="cta-final-content">
-          <h2 style={{color:"#ffffff"}}>Crie sua Bolsa, e expanda sua Marca!</h2>
+          <h2 style={{color:"#ffffff"}}>Transformamos sua Marca em uma Experiência Memorável!</h2>
           <p>Entre em contato agora e receba uma proposta personalizada em até 48 horas.</p>
           <a href="https://wa.me/+5519998061426?text=Tenho interesse em bolsas puffer personalizadas, e quero fazer um orçamento" className="cta-final-button">FALAR COM ESPECIALISTA</a>
         </div>
