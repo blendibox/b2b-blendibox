@@ -83,7 +83,7 @@ export default function LandingPage() {
       <section className="benefits">
         <div className="section-header">
           <div className="section-label">Vantagens Exclusivas</div>
-          <h2 className="section-title">Por quê escolher a Blendibox para seu Projeto?</h2>
+          <h2 className="section-title">Por que escolher a Blendibox para seu Projeto?</h2>
         </div>
 
 		
