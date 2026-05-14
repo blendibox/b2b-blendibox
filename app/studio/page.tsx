@@ -665,7 +665,6 @@ async function handleAiEnhance() {
 
   try {
     const API_KEY = process.env.NEXT_PUBLIC_API_KEY
-	console.log(API_KEY);
     const formData = new FormData()
     formData.append("image", lastBlobRef.current)
 
