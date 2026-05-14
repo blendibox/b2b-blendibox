@@ -21,8 +21,9 @@ export default function Footer() {
          <div className="footer-container">
             <div className="footer-logo">BLENDIBOX</div>
             <p>© 2026 Blendibox. Todos os direitos reservados.</p>
-			  <p>CNPJ: 17.08.-837.0001/69</p>
-         </div>
+			  <p>CNPJ: 17.08.-837.0001/69 |  Whatsapp: <a href="https://wa.me/+5519998061426?text=Tenho interesse em bolsas puffer personalizadas, e quero fazer um orçamento">(19) 99806-1426</a> </p>
+              <p><small>Feito com ❤️ | São Paulo - Brasil</small></p>
+		 </div>
       </footer>
 	 </main>
   );

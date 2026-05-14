@@ -157,15 +157,18 @@ export default function LandingPage() {
 		
 		  <div className="benefits-grid">
           {[
-		    { icon: "💎", title: "Maxi Tote Vermelha", text: "./images/maxitote_vermelha.png" },
-            { icon: "⚡", title: "Maxi Tote Lilás", text: "./images/maxitote_lilas.png" },
-			{ icon: "📦", title: "Maxi Tote Verde", text: "./images/maxitote_verde.jpg" },
-            { icon: "🎨", title: "Maxi Puffer Lilás", text: "./images/maxipuffer_lilas.jpg" }         
-           
+		    { icon: "💎", title: "Costuras Horizontais (puffer clássico)", text: "./images/maxitote_vermelha.png" },
+            { icon: "⚡", title: "Corações Bordados", text: "./images/maxitote_lilas.png" },
+			{ icon: "📦", title: "Costura Puffer de corações", text: "./images/maxitote_verde.jpg" },
+            { icon: "🎨", title: "Puffer com o tema flores", text: "./images/maxipuffer_lilas.jpg" }  ,       
+            { icon: "⚡", title: "Puffer Coração grande", text: "./images/coracao.png" },
+			{ icon: "📦", title: "Costura Puffer fitness", text: "./images/verdefit.png" },
+            { icon: "🎨", title: "Puffer com o tema beleza", text: "./images/rosaspa.png" } ,        
+            { icon: "🎨", title: "Costura Puffer fitness", text: "./images/amarelofit.png" } 
           ].map((benefit, index) => (
             <div key={index} className="benefit-card reveal">
               <h3 className="benefit-title">{benefit.title}</h3>
-              <img src={benefit.text}></img>
+              <img alt={benefit.title} src={benefit.text}></img>
             </div>
           ))}
         </div>

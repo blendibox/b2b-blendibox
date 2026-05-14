@@ -30,7 +30,7 @@ const BAG_MODELS: BagModel[] = [
   { id: "tote",      name: "Maxi Tote",   dims: "40 × 35 cm", icon: "👜", imgUrl: "/images/bolsa_maxi_tote.png" },
   { id: "shoulder",  name: "Maxi Puffer",  dims: "30 × 30 cm", icon: "👛", imgUrl: "/images/maxi_puffer.png" },
   { id: "crossbody", name: "Notebook",   dims: "48 × 36 cm", icon: "💼", imgUrl: "/images/bolsanotebook.png" },
-  { id: "mini",      name: "Mini Bag",      dims: "25 × 20 cm", icon: "👝", imgUrl: null },
+  { id: "mini",      name: "Necessaire",      dims: "25 × 20 cm", icon: "👝", imgUrl:"/images/necessaire_efe.png" },
 ]
 
 const BAG_COLORS: BagColor[] = [
