@@ -50,7 +50,6 @@ jobs:
           fi
       - name: Build with Next.js
         run: npx next build
-        working-directory: ./app
         env:
           NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
           # adicione todas as NEXT_PUBLIC_ que usar
