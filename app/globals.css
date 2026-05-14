@@ -380,6 +380,29 @@
         .benefit-card:hover::before {
             height: 100%;
         }
+		
+		.benefit-card .card-image {
+			overflow: hidden;
+			border-radius: inherit;
+		}
+
+		/* Imagem */
+		.benefit-card .card-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			transition:
+				transform .6s ease,
+				filter .4s ease;
+
+			transform: scale(1);
+		}
+
+		/* Hover da imagem */
+		.benefit-card:hover .card-image img {
+			transform: scale(1.09);
+		}
         
         .benefit-icon {
             font-size: 3rem;

@@ -168,8 +168,10 @@ export default function LandingPage() {
           ].map((benefit, index) => (
             <div key={index} className="benefit-card reveal">
               <h3 className="benefit-title">{benefit.title}</h3>
-              <img alt={benefit.title} src={benefit.text}></img>
-            </div>
+			  <div className="card-image">
+              <img   alt={benefit.title} src={benefit.text}></img>
+               </div>
+			</div>
           ))}
         </div>
       </section>
