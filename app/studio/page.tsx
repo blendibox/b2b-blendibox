@@ -1572,7 +1572,7 @@ async function handleAiEnhance() {
                 {!aiLoading && aiError && (
                   <div className="ai-error">
                     <div className="ai-error-icon">⚠️</div>
-                    <p key={msgError} >{(msgError == "N")?console.log(aiError):""}
+                    <p key={msgError} >{(msgError === "N")?console.log(aiError):""}
 						{ msgError="S" }</p>
                     <small>Serviço de IA inativo. Tente novamente mais tarde.</small>
                   </div>
