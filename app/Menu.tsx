@@ -17,7 +17,9 @@ export default function Menu() {
 	{/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          <div className="logo"><a href='/'>BLENDIBOX</a></div>
+          <div className="logo"><a href='/'>
+		    <img src="/images/logoblendibox.webp" ></img>
+		  </a></div>
           <button className="nav-cta" onClick={scrollToContact}>
             SOLICITAR ORÇAMENTO
           </button>

@@ -68,6 +68,11 @@
             color: var(--primary);
             letter-spacing: -0.5px;
         }
+		 .logo img{
+            max-width:150px;
+			margin-right:10px;
+        }
+        
         
         .nav-cta {
             background: var(--primary);
@@ -732,6 +737,10 @@
             color: var(--secondary);
             margin-bottom: 1rem;
         }
+		
+		.footer-logo img{
+			    margin: 0 auto;
+		}
         
         .footer-contact {
             margin-top: 2rem;
@@ -779,6 +788,10 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+			
+			.hero-image-main{
+				height:500px;
+			}
             
             .section-title {
                 font-size: 2.5rem;
