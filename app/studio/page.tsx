@@ -434,6 +434,7 @@ export default function StudioPuffer() {
   useEffect(() => {
   if (msgError === "N") {
     console.log(aiError);
+	msgError= "";
   }
 }, [msgError, aiError]);
 
@@ -664,6 +665,7 @@ async function handleAiEnhance() {
 
   try {
     const API_KEY = process.env.NEXT_PUBLIC_API_KEY
+	console.log(API_KEY);
     const formData = new FormData()
     formData.append("image", lastBlobRef.current)
 
