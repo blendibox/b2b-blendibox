@@ -429,6 +429,13 @@ export default function StudioPuffer() {
     wait()
     return () => { cancelled = true }
   }, [setStatus])
+  
+   /* ── api cloudinary error console ── */
+  useEffect(() => {
+  if (msgError === "N") {
+    console.log(aiError);
+  }
+}, [msgError, aiError]);
 
   /* ── Scroll hint ── */
   useEffect(() => {
@@ -1572,8 +1579,7 @@ async function handleAiEnhance() {
                 {!aiLoading && aiError && (
                   <div className="ai-error">
                     <div className="ai-error-icon">⚠️</div>
-                    <p key={msgError} >{((msgError === "N")?console.log(aiError):'')}
-						{ msgError=" " }</p>
+                    <p ></p>
                     <small>Serviço de IA inativo. Tente novamente mais tarde.</small>
                   </div>
                 )}
