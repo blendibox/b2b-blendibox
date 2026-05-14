@@ -684,6 +684,10 @@ async function handleAiEnhance() {
     // Debug — abra o DevTools (F12) > Console para ver
     console.log("Worker status:", res.status)
     console.log("Worker content-type:", res.headers.get("content-type"))
+	
+	//  erro real:
+	const errorBody = await res.json()
+	console.log('Worker error body:', errorBody)
 
     if (!res.ok) {
       const errText = await res.text()
