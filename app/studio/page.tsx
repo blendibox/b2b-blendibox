@@ -1553,7 +1553,7 @@ async function handleAiEnhance() {
                 <span className="ai-badge">AI</span>
                 Melhorado com IA
               </div>
-              <button alt='Cloudflare Workers' className="ai-modal-close" onClick={() => setShowAiModal(false)}>✕</button>
+              <button  className="ai-modal-close" onClick={() => setShowAiModal(false)}>✕</button>
             </div>
 
             <div className="ai-modal-body">
@@ -1573,7 +1573,7 @@ async function handleAiEnhance() {
                   <div className="ai-error">
                     <div className="ai-error-icon">⚠️</div>
                     <p  >{(msgError == "N")?console.log(aiError):""}
-						{ msgError=""}</p>
+						{ msgError="" }</p>
                     <small>Serviço de IA inativo. Tente novamente mais tarde.</small>
                   </div>
                 )}
