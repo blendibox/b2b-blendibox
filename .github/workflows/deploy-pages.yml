@@ -42,14 +42,14 @@ jobs:
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "runner=npm run" >> $GITHUB_OUTPUT  # ← era "npx --no-install"
             exit 0
           else
             echo "Unable to determine package manager"
             exit 1
           fi
       - name: Build with Next.js
-        run: npm run build
+         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
           NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
           # adicione todas as NEXT_PUBLIC_ que usar
