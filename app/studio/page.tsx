@@ -33,6 +33,8 @@ const BAG_MODELS: BagModel[] = [
   { id: "mini",      name: "Necessaire",      dims: "25 × 20 cm", icon: "👝", imgUrl:"/images/necessaire_efe.png" },
 ]
 
+let msgError = "N";
+
 const BAG_COLORS: BagColor[] = [
   { hex: "#39161b", label: "Marrom",  grad: ["#39161b", "#39161b"] },
   { hex: "#5d4934", label: "Marrom Terra",  grad: ["#5d4934", "#5d4934"] }, 
@@ -476,7 +478,7 @@ export default function StudioPuffer() {
 
   /* ── File upload ── */
   function loadFile(file: File) {
-    if (!cvReady) { alert("OpenCV ainda está carregando. Aguarde."); return }
+    if (!cvReady) { alert("Puffer Studio ainda está carregando. Aguarde."); return }
     if (file.size > 10 * 1024 * 1024) { alert("Arquivo muito grande (máx 10 MB)"); return }
 
     setLoading(true); setLoadingMsg("Lendo imagem…")
@@ -645,52 +647,69 @@ export default function StudioPuffer() {
     bagImg.src = selectedModel.imgUrl
   }
  /* ── IA Enhance ── */
-  async function handleAiEnhance() {
-	  
-    if (!lastBlobRef.current) return
-	
-    setAiLoading(true); 
-	setAiError(null); 
-	setAiResult(null); 
-	setShowAiModal(true)
-					
-					 
-						
-    try {
+async function handleAiEnhance() {
+  if (!lastBlobRef.current) return
 
-	  const API_KEY = process.env.API_KEY;
-	  const formData = new FormData();
-	  formData.append("image", lastBlobRef.current);
-	  //formData.append("prompt", prompt);
+  setAiLoading(true)
+  setAiError(null)
+  setAiResult(null)
+  setShowAiModal(true)
 
-      // Chama o Worker Cloudflare diretamente
-	  
-	  
-      const res = await fetch("https://blendibox-studio.blendibox.workers.dev/", {
-         method: "POST",
-		  headers: {
-			Authorization: `Bearer ${API_KEY}`
-		  },
-		  body: formData
-      })
+  try {
+    const API_KEY = process.env.NEXT_PUBLIC_API_KEY
+    const formData = new FormData()
+    formData.append("image", lastBlobRef.current)
 
-        if (!res.ok) {
-		  const errText = await res.text()
-		  throw new Error(`Erro ${res.status}: ${errText}`)
-		}
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 120000)
 
-		const blob = await res.blob()
-		const url = URL.createObjectURL(blob)
+    const res = await fetch("https://blendibox-studio.blendibox.workers.dev/", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${API_KEY}`
+      },
+      body: formData,
+      signal: controller.signal,
+    })
+    clearTimeout(timeout)
 
-		setAiResult(url)
+    // Debug — abra o DevTools (F12) > Console para ver
+    console.log("Worker status:", res.status)
+    console.log("Worker content-type:", res.headers.get("content-type"))
 
-	  } catch (e: any) {
-		setAiError(e.message || "Erro ao processar com IA")
-	  } finally {
-		setAiLoading(false)
-	  }
+    if (!res.ok) {
+      const errText = await res.text()
+      throw new Error(`Erro ${res.status}: ${errText}`)
+    }
+
+    // Verifica se a resposta é JSON (erro) em vez de imagem
+    const contentType = res.headers.get("content-type") || ""
+    if (contentType.includes("application/json")) {
+      const json = await res.json()
+      throw new Error(json.error || "Resposta inesperada do servidor")
+    }
+
+    const blob = await res.blob()
+    console.log("Blob recebido:", blob.size, "bytes, tipo:", blob.type)
+
+    if (blob.size === 0) {
+      throw new Error("Resposta vazia do servidor")
+    }
+
+    const url = URL.createObjectURL(blob)
+    setAiResult(url)
+  } catch (e: any) {
+    if (e.name === "AbortError") {
+      setAiError("Tempo esgotado — a IA demorou mais de 120 segundos. Tente novamente.")
+    } else {
+      setAiError(e.message || "Erro ao processar com IA")
+    }
+  } finally {
+    setAiLoading(false)
   }
-  function handleAiDownload() {
+}
+
+ function handleAiDownload() {
     if (!aiResult) return
     const a = document.createElement("a")
     a.download = `blendibox-ai-${selectedModel.id}-${Date.now()}.png`
@@ -1532,9 +1551,9 @@ export default function StudioPuffer() {
             <div className="ai-modal-header">
               <div className="ai-modal-title">
                 <span className="ai-badge">AI</span>
-                Melhorado com Cloudflare Workers AI
+                Melhorado com IA
               </div>
-              <button className="ai-modal-close" onClick={() => setShowAiModal(false)}>✕</button>
+              <button alt='Cloudflare Workers' className="ai-modal-close" onClick={() => setShowAiModal(false)}>✕</button>
             </div>
 
             <div className="ai-modal-body">
@@ -1553,10 +1572,12 @@ export default function StudioPuffer() {
                 {!aiLoading && aiError && (
                   <div className="ai-error">
                     <div className="ai-error-icon">⚠️</div>
-                    <p>{aiError}</p>
-                    <small>Verifique o Worker e tente novamente.</small>
+                    <p  >{(msgError == "N")?console.log(aiError):""}
+						{ msgError=""}</p>
+                    <small>Serviço de IA inativo. Tente novamente mais tarde.</small>
                   </div>
                 )}
+
 
                 {!aiLoading && !aiError && aiResult && (
                   <>
@@ -1564,7 +1585,7 @@ export default function StudioPuffer() {
                       <div className="ai-compare-label">
                         <span style={{background:"#D4A574"}}/>Original
                       </div>
-                      <canvas
+                      <canvas style={{ background: selectedColor.grad[0] }}
                         className="ai-compare-img"
                         ref={(el) => {
                           if (!el || !bagCanvasRef.current) return
