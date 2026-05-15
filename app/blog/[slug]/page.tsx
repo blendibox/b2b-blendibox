@@ -1,6 +1,7 @@
 import posts from "../../../data/posts.json";
 import { notFound } from "next/navigation";
-
+import Link from "next/link";
+import BlogSidebar from "../../../components/BlogSidebar";
 import Footer from "../../Footer";
 import Menu from "../../Menu";
 
@@ -105,20 +106,95 @@ export default async function PostPage({ params }: Props) {
   if (!post) {
     notFound();
   }
+  
+  
+  const jsonLd = {
+  "@context": "https://schema.org",
+
+  "@type": "BlogPosting",
+
+  headline: post.title,
+
+  description: post.excerpt,
+
+  image: [
+    `https://blendibox.com.br${post.cover}`
+  ],
+
+  datePublished: post.date,
+
+  author: {
+    "@type": "Person",
+    name: post.author
+  },
+
+  publisher: {
+    "@type": "Organization",
+
+    name: "Blendibox",
+
+    logo: {
+      "@type": "ImageObject",
+
+      url: "https://presskit.blendibox.com.br/logo.png"
+    }
+  },
+
+  mainEntityOfPage: {
+    "@type": "WebPage",
+
+    "@id": `https://presskit.blendibox.com.br/blog/${post.slug}`
+  },
+
+  articleSection: post.category,
+
+  keywords: [
+    "bolsa puffer",
+    "press kit",
+    "bolsa personalizada",
+    "atacado",
+    "campanhas premium",
+    "blendibox"
+  ]
+};
+  
+ const categories = [
+  ...new Set(
+    posts.map((p) => p.category)
+  ),
+];
+  
 
   return (
   <>
+  
+    <script
+		type="application/ld+json"
+		dangerouslySetInnerHTML={{
+		  __html: JSON.stringify(jsonLd),
+		}}
+	  />
+
    <Menu/>
-    <article className="post-editorial">
+ 
+ <main className="blog-layout">
+    <BlogSidebar
+      categories={categories}
+      selected={post.category}
+    />
+  <article className="post-editorial">
       <img
         src={post.cover}
         alt={post.title}
         className="post-editorial-cover"
       />
 
-      <span className="post-editorial-category">
-        {post.category}
-      </span>
+      <Link
+		  href={`/blog?categoria=${post.category}`}
+		  className="post-editorial-category"
+		>
+		  {post.category}
+		</Link>
 
       <h1 className="post-editorial-title">
         {post.title}
@@ -154,7 +230,9 @@ export default async function PostPage({ params }: Props) {
         })}
       </div>
     </article>
+	</main>
 	<Footer/>
+	
 	</>
   );
 }

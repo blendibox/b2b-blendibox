@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond } from "next/font/google"
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -8,6 +9,11 @@ const cinzel = Cinzel({
   variable: "--font-cinzel",
 })
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400"],
@@ -15,8 +21,14 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 })
 
-export const metadata = {
-  title: "Demiurgo Solar-Serpentino | Escape Gnóstico",
+export const metadata: Metadata = {
+   title: {
+	  default: "Blendibox | Bolsas Puffer Personalizadas",
+	  template: "%s | Blendibox"
+	},
+	metadataBase: new URL(
+	  "https://presskit.blendibox.com.br"
+	),
   description: "A Blendibox é especialista em bolsas puffer personalizadas, nécessaires personalizadas e brindes corporativos premium para empresas, marcas, influenciadores e eventos. Criamos bolsas exclusivas com alto valor percebido para press kits, ações de marketing, lançamentos, academias, marcas fitness e campanhas publicitárias. Produzimos bolsas artesanais personalizadas com logo, tote bags puffer, nécessaires puffer e brindes criativos sob encomenda, transformando ideias em peças únicas e virais. Com pedido mínimo acessível, fabricação própria e personalização completa, a Blendibox ajuda marcas a fortalecerem sua identidade através de bolsas modernas, aesthetic e funcionais. Desenvolva sua bolsa personalizada com diferentes cores, formatos, costuras e estampas usando o Puffer Studio. Ideal para branding, eventos corporativos, kits para influenciadores e experiências premium.",
   keywords: [
   "bolsas personalizadas",
@@ -122,21 +134,85 @@ export const metadata = {
     locale: "pt_BR",
     type: "website",
   },
-};
+  twitter: {
+  card: "summary_large_image",
 
+  title:
+    "Blendibox | Bolsas Personalizadas Premium",
+
+  description:
+    "Bolsas puffer personalizadas para marcas, press kits e campanhas premium.",
+
+  images: [
+    "https://presskit.blendibox.com.br/coracao.png"
+  ]
+},
+
+robots: {
+  index: true,
+  follow: true,
+
+  googleBot: {
+    index: true,
+    follow: true,
+
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
+alternates: {
+  canonical:
+    "https://presskit.blendibox.com.br",
+},
+};
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    name: "Blendibox",
+
+    url: "https://presskit.blendibox.com.br",
+
+    logo:
+      "https://presskit.blendibox.com.br/coracao.png",
+
+    sameAs: [
+      "https://instagram.com/blendibox"
+    ],
+
+    description:
+      "Bolsas puffer personalizadas premium para marcas, empresas e press kits."
+  };
+
   return (
     <html lang="pt-BR">
-	<head>
-	  <link rel="preconnect" href="https://fonts.googleapis.com" />
-	</head>
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+      </head>
+
       <body
-        className={`${cinzel.variable} ${cormorant.variable} antialiased`}
+        className={`${cinzel.variable} ${cormorant.variable} ${playfair.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              organizationSchema
+            ),
+          }}
+        />
+
         {children}
       </body>
     </html>

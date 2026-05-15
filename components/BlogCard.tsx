@@ -19,9 +19,7 @@ export default function BlogCard({ post }: Props) {
       href={`/blog/${post.slug}`}
       className="editorial-card"
     >
-      <div className="editorial-image">
-        <img src={post.cover} alt={post.title} />
-      </div>
+     
 
       <div className="editorial-content">
         <span className="editorial-category">
