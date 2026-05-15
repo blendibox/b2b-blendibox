@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run build-sitemap",
     "start": "next start",
+	"build-sitemap":"npx next-sitemap --config next-sitemap.config.cjs",
     "lint": "eslint"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "@types/react-dom": "^19",
     "eslint-config-next": "^0.2.4",
     "tailwindcss": "^4",
+	"next-sitemap":"^3.1.23",
     "typescript": "^5"
   }
 }
