@@ -761,6 +761,17 @@
             margin-bottom: 1rem;
         }
 		
+		.footer-logo p{
+            font-family: 'Playfair Display', serif;
+            font-size: 0.5rem;
+            font-weight: bold;
+            color: var(--white);
+			margin: 0 auto;
+			position:relative;
+			font-family: Playfair Display, serif;
+           
+        }
+		
 		.footer-logo img{
 			    margin: 0 auto;
 		}

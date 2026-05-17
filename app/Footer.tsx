@@ -18,13 +18,15 @@ export default function Footer() {
         </div>
       </section>
 	  <footer className="footer">
-         <div className="footer-container">
-            <div className="footer-logo">
+	  <div className="columns-3" >
+	     <div>oi</div>
+		 <div className="footer-container"> 
+		  <div className="footer-logo  ">			
 			 <img src="/images/logoblendiboxbranco.png" ></img>
 			</div>
-            <p>© 2026 Blendibox. Todos os direitos reservados.</p>
-			  <p>CNPJ: 17.08.-837.0001/69 |  Whatsapp: <a href="https://wa.me/+5519998061426?text=Tenho interesse em bolsas puffer personalizadas, e quero fazer um orçamento">(19) 99806-1426</a> </p>
-              <p><small>Feito com ❤️ | São Paulo - Brasil</small></p>
+			<p className="break-after-column"> © 2026 Blendibox. Todos os direitos reservados.</p>
+		 </div>
+		 <div >oi</div>
 		 </div>
       </footer>
 	 </main>

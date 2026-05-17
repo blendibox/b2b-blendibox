@@ -684,17 +684,28 @@ async function handleAiEnhance() {
     // Debug — abra o DevTools (F12) > Console para ver
     console.log("Worker status:", res.status)
     console.log("Worker content-type:", res.headers.get("content-type"))
-	
-	//  erro real:
-	const errorBody = await res.json()
-	console.log('Worker error body:', errorBody)
+		
 
     if (!res.ok) {
       const errText = await res.text()
       throw new Error(`Erro ${res.status}: ${errText}`)
+	  //  erro real:
+	
     }
+	
+	 const resultBody = await res.json()
+	 console.log('Worker result body:', resultBody)
+	
+	// sucesso — successBody.image é o base64
+	//`data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBA`
+	if(resultBody.image){		
+		const imageSrc = `data:image/jpeg;base64,${resultBody.image}`
+        setAiResult(imageSrc) // ou como você aplica a imagem
+	}
 
-    // Verifica se a resposta é JSON (erro) em vez de imagem
+	
+
+  /*  // Verifica se a resposta é JSON (erro) em vez de imagem
     const contentType = res.headers.get("content-type") || ""
     if (contentType.includes("application/json")) {
       const json = await res.json()
@@ -709,7 +720,8 @@ async function handleAiEnhance() {
     }
 
     const url = URL.createObjectURL(blob)
-    setAiResult(url)
+    setAiResult(url)*/
+	
   } catch (e: any) {
     if (e.name === "AbortError") {
       setAiError("Tempo esgotado — a IA demorou mais de 120 segundos. Tente novamente.")
@@ -1181,7 +1193,7 @@ async function handleAiEnhance() {
         /* Telas com pouca altura (laptops) */
 
         @media (max-width: 600px) {
-          header { padding:.5rem .9rem; height:48px; }
+          header { padding: 1rem .9rem; height:48px; }
           .workspace { padding:.6rem .7rem; gap:.6rem;
             height:auto;
             /* sobrescreve calc(100dvh) do desktop */
