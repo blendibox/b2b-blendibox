@@ -3,8 +3,10 @@
 import { useEffect, useRef } from "react";
 
 
-export default function VideoAutoPlay() {
+export default function VideoAutoPlay(params) {
 const videoRef = useRef<HTMLVideoElement | null>(null);
+
+const src = params.src;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -41,7 +43,7 @@ const videoRef = useRef<HTMLVideoElement | null>(null);
   return (
     <video
       ref={videoRef}
-      src="/video/bolsasQuiltBlendibox.mp4"
+      src={src}
       muted
       playsInline
       controls

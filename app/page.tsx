@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 
 import VideoAutoPlay from "./VideoAutoPlay";
-import VideoAutoPlay2 from "./VideoAutoPlay2";
 import Footer from "./Footer";
 import Menu from "./Menu";
 
@@ -70,7 +69,9 @@ export default function LandingPage() {
 
         <div className="hero-image">
           <div className="hero-image-main">
-		  <VideoAutoPlay/>
+		  <VideoAutoPlay
+		    src="/video/bolsasQuiltBlendibox.mp4"
+		  />
 		  </div>
           <div className="hero-badge">
             <div className="badge-text">Cases de Sucesso</div>
@@ -138,7 +139,9 @@ export default function LandingPage() {
 
         <div className="hero-image">
           <div className="hero-image-main">
-		  	<VideoAutoPlay2/>
+		  	<VideoAutoPlay
+			  src="/video/pufferstudio.mp4"
+			/>
 		  </div>
           <div className="hero-badge">
             <div className="badge-text">Use sua Criatividade</div>
