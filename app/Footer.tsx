@@ -18,15 +18,17 @@ export default function Footer() {
         </div>
       </section>
 	  <footer className="footer">
-	  <div className="columns-3" >
-	     <div>oi</div>
-		 <div className="footer-container"> 
-		  <div className="footer-logo  ">			
+	  <div >
+	 
+         <div className="footer-container">
+		    <div className="footer-logo">			
 			 <img src="/images/logoblendiboxbranco.png" ></img>
 			</div>
-			<p className="break-after-column"> © 2026 Blendibox. Todos os direitos reservados.</p>
+			<div>
+			 <p>© 2026 Blendibox. Todos os direitos reservados.</p>
+			</div>
 		 </div>
-		 <div >oi</div>
+
 		 </div>
       </footer>
 	 </main>
