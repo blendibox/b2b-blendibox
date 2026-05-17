@@ -17,19 +17,20 @@ export default function Footer() {
           <a href="https://wa.me/+5519998061426?text=Tenho interesse em bolsas puffer personalizadas, e quero fazer um orçamento" className="cta-final-button">FALAR COM ESPECIALISTA</a>
         </div>
       </section>
-	  <footer className="footer">
-	  <div >
-	 
-         <div className="footer-container">
-		    <div className="footer-logo">			
+	  <footer className="footer">	  
+	   <div className="footer-container">      		 
+		  <div className="footer-logo">			
 			 <img src="/images/logoblendiboxbranco.png" ></img>
-			</div>
-			<div>
-			 <p>© 2026 Blendibox. Todos os direitos reservados.</p>
-			</div>
-		 </div>
-
-		 </div>
+		  </div>					
+	      <div className="footer-container">  
+		    <button className="hero-cta"><a href="/">HOME</a> </button> 	
+            <button className="hero-cta"><a href="/blog/">BLOG</a></button>				  
+            <button className="hero-cta"><a href="/studio/">PUFFER STUDIO </a></button>
+            <button className="hero-cta"><a href="https://wa.me/+5519998061426?text=Olá! tenho interesse em orçar bolsas puffer no atacado">WHATSAPP </a></button>		
+			
+		  </div>
+		  <small >© 2026 Blendibox. Todos os direitos reservados.</small>
+	   </div>
       </footer>
 	 </main>
   );

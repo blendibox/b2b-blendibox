@@ -183,11 +183,7 @@ export default async function PostPage({ params }: Props) {
       selected={post.category}
     />
   <article className="post-editorial">
-      <img
-        src={post.cover}
-        alt={post.title}
-        className="post-editorial-cover"
-      />
+      
 
       <Link
 		  href={`/blog?categoria=${post.category}`}
@@ -229,6 +225,15 @@ export default async function PostPage({ params }: Props) {
           return <p key={index}>{block.text}</p>;
         })}
       </div>
+	  <img
+        src={post.cover}
+        alt={post.title}
+        className="post-editorial-cover"
+      />
+	  
+	  <button className="hero-cta"><a href="/studio">ACESSAR PUFFER STUDIO  <span>→</span></a>
+	  </button>
+
     </article>
 	</main>
 	<Footer/>
