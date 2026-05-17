@@ -89,10 +89,10 @@ export default function LandingPage() {
 		
         <div className="benefits-grid">
           {[
-		    { icon: "💎", title: "Alto Valor Percebido", text: "Ideal para Press Kits, Eventos e ações de Marketing" },
-            { icon: "⚡", title: "Trend", text: "Transformamos sua marca em uma Bolsa Puffer Viral" },
-            { icon: "🎨", title: "Artesanal", text: "Do seu logo à bolsa pronta,tudo feito por pessoas!" },          
-            { icon: "📦", title: "Pedido Mínimo", text: "A partir de apenas 50 unidades." }
+		    { icon: "💎", title: "Campanhas Memoráveis", text: "Criamos bolsas puffer personalizadas que transformam ações promocionais em experiências premium." },
+            { icon: "📸", title: "Visual que Viraliza", text: "Peças desenvolvidas para impressionar em unboxings, eventos e conteúdos nas redes sociais." },
+            { icon: "🧵", title: "Quilt & Bordado Exclusivos", text: "Cada detalhe é pensado para refletir a identidade e o posicionamento da sua marca." },          
+            { icon: "✨", title: "Muito Além de um Brinde", text: "Entregue uma peça útil, sofisticada e desejada — não apenas mais um item promocional." }
           ].map((benefit, index) => (
             <div key={index} className="benefit-card reveal">
               <div className="benefit-icon">{benefit.icon}</div>
