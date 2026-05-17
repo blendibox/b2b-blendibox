@@ -132,7 +132,7 @@ export default function LandingPage() {
           </div>
 
           <button className="hero-cta" >
-            <a href='/studio/'>ACESSAR PUFFER STUDIO  <span>→</span></a>
+            <a href='/studio'>ACESSAR PUFFER STUDIO  <span>→</span></a>
           </button>
         </div>
 
