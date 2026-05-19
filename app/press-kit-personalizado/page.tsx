@@ -50,9 +50,9 @@ const passos = [
 const faq = [
   { q: "Qual o pedido mínimo?", a: "A partir de 50 unidades para projetos personalizados." },
   { q: "Vocês atendem todo o Brasil?", a: "Sim, enviamos para todo o território nacional." },
-  { q: "Posso usar minha logo e cores?", a: "Sim, toda arte é desenvolvida exclusivamente para sua marca." },
+  { q: "Posso usar minha logo?", a: "Sim, podemos bordar sua marca ou logo." },
   { q: "Como recebo o orçamento?", a: "Via WhatsApp, com proposta detalhada em até 24h úteis." },
-  { q: "Qual o prazo de produção?", a: "Em média ±15 dias úteis após aprovação da arte." },
+  { q: "Qual o prazo de produção?", a: "Em média ±15 dias úteis após confirmação do pedido." },
   { q: "Vocês fazem necessaires também?", a: "Sim, produzimos bolsas e necessaires puffer personalizadas." },
 ];
 
@@ -196,7 +196,7 @@ export default function PressKitPage() {
       <section className="benefits">
         <div className="section-header">
           <div className="section-label">Processo</div>
-          <h2 className="section-title">Do briefing ao press kit pronto em 4 passos</h2>
+          <h2 className="section-title">A bolsa do seu press kit em 4 passos</h2>
         </div>
 
         <div className="benefits-grid">

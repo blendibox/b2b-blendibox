@@ -23,7 +23,8 @@ export default function Footer() {
 			 <img src="/images/logoblendiboxbranco.png" ></img>
 		  </div>					
 	      <div className="footer-container">  
-		    <button className="hero-cta"><a href="/">HOME</a> </button> 	
+		    <button className="hero-cta"><a href="/">HOME</a> </button> 
+            <button className="hero-cta"><a href="https://www.blendibox.com.br">LOJA</a> </button> 			
             <button className="hero-cta"><a href="/blog">BLOG</a></button>				  
             <button className="hero-cta"><a href="/studio">PUFFER STUDIO </a></button>
             <button className="hero-cta"><a href="https://wa.me/+5519998061426?text=Olá! tenho interesse em orçar bolsas puffer no atacado">WHATSAPP </a></button>		
