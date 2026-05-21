@@ -3,6 +3,11 @@
 import { useEffect, useRef } from "react";
 
 
+interface VideoAutoPlayProps {
+  src?: string;
+  className?: string;
+}
+
 export default function VideoAutoPlay(params: VideoAutoPlayProps) {
 const videoRef = useRef<HTMLVideoElement | null>(null);
 
