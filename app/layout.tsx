@@ -191,6 +191,8 @@ export default function RootLayout({
     description:
       "Bolsas puffer personalizadas premium para marcas, empresas e press kits."
   };
+  
+
 
   return (
     <html lang="pt-BR">
@@ -199,11 +201,22 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.googleapis.com"
         />
+		
       </head>
 
       <body
         className={`${cinzel.variable} ${cormorant.variable} ${playfair.variable} antialiased`}
       >
+	  	   {/* Google Ads Tag — forma correta em Next.js */}
+      <script     src="https://www.googletagmanager.com/gtag/js?id=AW-10790588738"       strategy="afterInteractive" ></script>
+    <script id="google-ads" strategy="afterInteractive">
+	  {`
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'AW-10790588738');
+	  `}
+	</script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -212,6 +225,7 @@ export default function RootLayout({
             ),
           }}
         />
+	
 
         {children}
       </body>
