@@ -79,6 +79,7 @@ function extractGroupId(item) {
 // Formato: Marca + Tipo + Feminina + Material + Cor
 // Ex: "Blendibox Bolsa Puffer Feminina Nylon Preta"
 const COLOR_MAP = {
+  // cores simples
   preto: 'Preta', preta: 'Preta',
   branco: 'Branca', branca: 'Branca',
   rosa: 'Rosa',
@@ -93,6 +94,22 @@ const COLOR_MAP = {
   caramelo: 'Caramelo',
   nude: 'Nude',
   laranja: 'Laranja',
+  // cores compostas (códigos do MPN → nome legível)
+  amarinho:  'Azul Marinho',
+  anoite:    'Azul Noite',
+  vmenta:    'Verde Menta',
+  agema:     'Amarelo Gema',
+  vvinho:    'Vermelho Vinho',
+  aserenity: 'Azul Serenity',
+  rbebê:     'Rosa Bebê',   rbebe: 'Rosa Bebê',
+  abebê:     'Azul Bebê',   abebe: 'Azul Bebê',
+  vcherry:   'Vermelho Cherry',
+  mmarrom:   'Marrom',
+  acobalto:  'Azul Cobalto',
+  vbandeira: 'Verde Bandeira',
+  rpessego:  'Rosa Pêssego', 'rpêssego': 'Rosa Pêssego',
+  voliva:    'Verde Oliva',
+  vgarrafa:  'Verde Garrafa',
 };
 
 function buildTitle(item) {
