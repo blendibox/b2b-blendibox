@@ -1,0 +1,35 @@
+name: Generate Blendibox Feed
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # todo dia às 06:00 UTC (03:00 horário de Brasília)
+  workflow_dispatch:        # permite rodar manualmente pelo GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Gerar feed.xml
+        env:
+          SOURCE_FEED_URL: ${{ secrets.SOURCE_FEED_URL }}
+        run: node scripts/generate-feed.js
+
+      - name: Commit feed.xml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/feed.xml
+          git diff --cached --quiet || git commit -m "chore: update feed.xml [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
