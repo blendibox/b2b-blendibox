@@ -64,6 +64,58 @@ function extractColor(item) {
   return 'preto';
 }
 
+// ─── Extrai item_group_id do g:mpn (remove a cor do final) ───────────────────
+function extractGroupId(item) {
+  const mpn = getTag(item, 'g:mpn');
+  if (mpn) {
+    const parts = mpn.split('_');
+    return parts.length > 1 ? parts.slice(0, -1).join('_') : mpn;
+  }
+  return null;
+}
+
+
+// ─── Monta título otimizado para Google Shopping ─────────────────────────────
+// Formato: Marca + Tipo + Feminina + Material + Cor
+// Ex: "Blendibox Bolsa Puffer Feminina Nylon Preta"
+const COLOR_MAP = {
+  preto: 'Preta', preta: 'Preta',
+  branco: 'Branca', branca: 'Branca',
+  rosa: 'Rosa',
+  bege: 'Bege',
+  azul: 'Azul',
+  verde: 'Verde',
+  vermelho: 'Vermelha', vermelha: 'Vermelha',
+  amarelo: 'Amarela', amarela: 'Amarela',
+  cinza: 'Cinza',
+  marrom: 'Marrom',
+  lilas: 'Lilás', lilás: 'Lilás',
+  caramelo: 'Caramelo',
+  nude: 'Nude',
+  laranja: 'Laranja',
+};
+
+function buildTitle(item) {
+  const brand       = getTag(item, 'g:brand') || 'Blendibox';
+  const productType = getTag(item, 'g:product_type') || 'Bolsa';
+  const color       = extractColor(item);
+  const colorPt     = COLOR_MAP[color.toLowerCase()] || color.charAt(0).toUpperCase() + color.slice(1);
+
+  // Tenta extrair o modelo do título original (ex: "Maxi Bolsa Puffer")
+  const originalTitle = getTag(item, 'title') || '';
+  // Pega só as primeiras palavras significativas antes do " - " ou do nome da marca
+  // Remove a marca do título (início, fim ou após " - ") para isolar só o modelo
+  let model = originalTitle
+    .replace(/\s*[-–]\s*.+$/i, '')        // remove tudo após " - " (cor, marca etc)
+    .replace(/\bBlendibox\b/gi, '')        // remove "Blendibox" onde ainda restar
+    .replace(/\s{2,}/g, ' ')               // normaliza espaços duplos
+    .trim();
+  if (!model) model = productType;
+
+  // Formato: Marca + Modelo + Feminina + Nylon + Cor
+  return `${brand} ${model} Feminina Nylon ${colorPt}`;
+}
+
 // ─── Processamento ───────────────────────────────────────────────────────────
 function processFeed(sourceXml) {
   // Captura o cabeçalho do <channel> (antes do primeiro <item>)
@@ -95,14 +147,42 @@ function processFeed(sourceXml) {
     if (price) item = setTag(item, 'g:sale_price', price);
 
     // g:color → extrai do g:mpn, fallback "preto"
-    const color = extractColor(item);
-    item = setTag(item, 'g:color', color);
+    item = setTag(item, 'g:color', extractColor(item));
 
-    // g:gender → fixo Female (Google aceita: Male, Female, Unisex)
+    // g:gender → fixo Female
     item = setTag(item, 'g:gender', 'Female');
 
-    // g:age_group → fixo adult (Google aceita: newborn, infant, toddler, kids, adult)
+    // g:age_group → fixo adult
     item = setTag(item, 'g:age_group', 'adult');
+
+    // g:size → bolsas não têm tamanho, mas o Google exige o campo para acessórios
+    item = setTag(item, 'g:size', 'One Size');
+
+    // g:google_product_category → 166 = Apparel & Accessories > Handbags, Wallets & Cases > Handbags
+    item = setTag(item, 'g:google_product_category', '166');
+
+    // g:item_group_id → MPN sem a cor (ex: BBXMAXIPUFF_preto → BBXMAXIPUFF)
+    // agrupa variantes do mesmo produto para o Google Shopping
+    const groupId = extractGroupId(item);
+    if (groupId) item = setTag(item, 'g:item_group_id', groupId);
+
+    // g:material → nylon (material das bolsas Blendibox)
+    item = setTag(item, 'g:material', 'nylon');
+
+    // g:additional_image_link → gera 2 imagens extras trocando "large" por "medium" e "small"
+    const imageLink = getTag(item, 'g:image_link');
+    if (imageLink && imageLink.includes('large')) {
+      const mediumLink = imageLink.replace('-large.', '-medium.');
+      const smallLink  = imageLink.replace('-large.', '-small.');
+      item = item.replace(/<\/item>/i,
+        `  <g:additional_image_link>${mediumLink}<\/g:additional_image_link>\n  <g:additional_image_link>${smallLink}<\/g:additional_image_link>\n<\/item>`
+      );
+    }
+
+    // g:title → reescreve no formato otimizado para Google Shopping
+    // Formato: Marca + Modelo + Feminina + Nylon + Cor
+    // Ex: "Blendibox Maxi Bolsa Puffer Feminina Nylon Preta"
+    item = setTag(item, 'title', buildTitle(item));
 
     return item;
   });
