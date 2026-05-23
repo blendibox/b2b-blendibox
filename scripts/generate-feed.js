@@ -52,6 +52,18 @@ function setTag(xml, tag, value) {
   return xml.replace(/<\/item>/i, `  <${tag}>${value}</${tag}>\n</item>`);
 }
 
+// ─── Extrai cor do g:mpn (após o último _) ───────────────────────────────────
+function extractColor(item) {
+  const mpn = getTag(item, 'g:mpn');
+  if (mpn) {
+    const parts = mpn.split('_');
+    if (parts.length > 1) {
+      return parts[parts.length - 1].trim();
+    }
+  }
+  return 'preto';
+}
+
 // ─── Processamento ───────────────────────────────────────────────────────────
 function processFeed(sourceXml) {
   // Captura o cabeçalho do <channel> (antes do primeiro <item>)
@@ -76,12 +88,22 @@ function processFeed(sourceXml) {
 
   console.log(`✅ Itens Blendibox filtrados: ${blendiboxItems.length}`);
 
-  // Iguala g:sale_price = g:price
+  // Enriquece cada item
   const processedItems = blendiboxItems.map((item) => {
+    // g:sale_price = g:price
     const price = getTag(item, 'g:price');
-    if (price) {
-      return setTag(item, 'g:sale_price', price);
-    }
+    if (price) item = setTag(item, 'g:sale_price', price);
+
+    // g:color → extrai do g:mpn, fallback "preto"
+    const color = extractColor(item);
+    item = setTag(item, 'g:color', color);
+
+    // g:gender → fixo Female (Google aceita: Male, Female, Unisex)
+    item = setTag(item, 'g:gender', 'Female');
+
+    // g:age_group → fixo adult (Google aceita: newborn, infant, toddler, kids, adult)
+    item = setTag(item, 'g:age_group', 'adult');
+
     return item;
   });
 
