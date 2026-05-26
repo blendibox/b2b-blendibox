@@ -133,6 +133,51 @@ function buildTitle(item) {
   return `${brand} ${model} Feminina Nylon ${colorPt}`;
 }
 
+// ─── Limpa e otimiza a descrição ─────────────────────────────────────────────
+function cleanDescription(desc, item) {
+  if (!desc) return '';
+
+  let d = desc
+    // Remove links (vídeos Shopee, URLs genéricas)
+    .replace(/https?:\/\/\S+/g, '')
+    // Normaliza espaços múltiplos
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+
+  // Extrai dimensões antes de removê-las do meio do texto
+  const dims = [];
+  const altMatch   = d.match(/altura[:\s]+(\d+\s*cm)/i);
+  const largMatch  = d.match(/largura(?!\s*da)[:\s]+(\d+\s*cm)/i);
+  const baseMatch  = d.match(/largura\s*da\s*base[:\s]+(\d+\s*cm)/i);
+  if (altMatch)  dims.push(`Altura: ${altMatch[1]}`);
+  if (largMatch) dims.push(`Largura: ${largMatch[1]}`);
+  if (baseMatch) dims.push(`Base: ${baseMatch[1]}`);
+
+  // Remove o bloco de medidas do meio (será reposicionado no prefixo)
+  d = d.replace(/medidas[^:]*:[\s\S]*?(?=feita|material|nylon|fechamento|o efeito)/i, '');
+
+  // Remove frases genéricas sem valor informativo real
+  d = d
+    .replace(/descubra [^!]+!/gi, '')
+    .replace(/transforme seu look[^!]+!/gi, '')
+    .replace(/garanta a sua[^!]+!/gi, '')
+    .replace(/seja a mulher[^!]+!/gi, '')
+    .replace(/disponível em diversas cores[^!]+!/gi, '')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+
+  // Monta prefixo rico com atributos-chave nos primeiros 160 chars
+  const color   = extractColor(item);
+  const colorPt = COLOR_MAP[color.toLowerCase()] || color.charAt(0).toUpperCase() + color.slice(1);
+  const dimStr  = dims.length ? ` | Medidas: ${dims.join(', ')}` : '';
+  const prefix  = `Bolsa Puffer feminina em nylon, cor ${colorPt}${dimStr}. `;
+
+  const finalDesc = (prefix + d).replace(/[ \t]{2,}/g, ' ').trim();
+
+  // Máximo 5000 chars (limite do Google)
+  return finalDesc.substring(0, 5000);
+}
+
 // ─── Processamento ───────────────────────────────────────────────────────────
 function processFeed(sourceXml) {
   // Captura o cabeçalho do <channel> (antes do primeiro <item>)
@@ -162,6 +207,10 @@ function processFeed(sourceXml) {
     // g:sale_price = g:price
     const price = getTag(item, 'g:price');
     if (price) item = setTag(item, 'g:sale_price', price);
+
+    // g:description → limpa URLs, reposiciona medidas, otimiza primeiros 160 chars
+    const rawDesc = getTag(item, 'description');
+    if (rawDesc) item = setTag(item, 'description', cleanDescription(rawDesc, item));
 
     // g:color → extrai do g:mpn, fallback "preto"
     item = setTag(item, 'g:color', extractColor(item));
@@ -200,6 +249,35 @@ function processFeed(sourceXml) {
     // Formato: Marca + Modelo + Feminina + Nylon + Cor
     // Ex: "Blendibox Maxi Bolsa Puffer Feminina Nylon Preta"
     item = setTag(item, 'title', buildTitle(item));
+
+    // ── Custom Labels para segmentação de campanhas no Google Ads ─────────────
+
+    // custom_label_0 → marca (já existe no feed original, garante o valor)
+    item = setTag(item, 'g:custom_label_0', 'Bolsas Blendibox');
+
+    // custom_label_1 → faixa de preço (para lances diferenciados por valor)
+    const priceRaw = getTag(item, 'g:price');
+    if (priceRaw) {
+      const priceNum = parseFloat(priceRaw.replace(/[^0-9.,]/g, '').replace(',', '.'));
+      let priceRange = 'acima de 200';
+      if      (priceNum <= 100) priceRange = 'ate 100';
+      else if (priceNum <= 150) priceRange = '100 a 150';
+      else if (priceNum <= 200) priceRange = '150 a 200';
+      item = setTag(item, 'g:custom_label_1', priceRange);
+    }
+
+    // custom_label_2 → tipo de produto (Bolsa, Mochila, Necessaire etc)
+    const productType = getTag(item, 'g:product_type') || '';
+    let productLabel = 'Bolsa';
+    if (/mochila/i.test(productType))    productLabel = 'Mochila';
+    else if (/necessaire/i.test(productType)) productLabel = 'Necessaire';
+    else if (/carteira/i.test(productType))   productLabel = 'Carteira';
+    else if (/pochete/i.test(productType))    productLabel = 'Pochete';
+    item = setTag(item, 'g:custom_label_2', productLabel);
+
+    // custom_label_3 → cor legível (para campanhas segmentadas por cor)
+    const colorVal = getTag(item, 'g:color') || 'Preta';
+    item = setTag(item, 'g:custom_label_3', colorVal);
 
     return item;
   });

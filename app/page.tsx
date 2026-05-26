@@ -154,7 +154,7 @@ export default function LandingPage() {
 			<div style={{marginTop: 10 + 'em'}}></div>
 		     <div className="section-header">
 			    
-             <h3 className="section-title">Aqui, sua criatividade vira peça exclusiva!</h3>
+             <h2 className="section-title">Aqui, sua criatividade vira peça exclusiva!</h2>
 			 <div className="section-label" style={{marginTop: 2 + 'em'}}>Veja Alguns Exemplos:</div>
            </div>
 		

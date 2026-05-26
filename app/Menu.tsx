@@ -17,8 +17,8 @@ export default function Menu() {
 	{/* Navegação */}
       <nav className="nav">
         <div className="nav-container">
-          <div className="logo"><a href='/'>
-		    <img src="/images/logoblendibox.webp" ></img>
+          <div className="logo"><a href='/' aria-label="ir para a página principal">
+		    <img src="/images/logoblendibox.webp" alt="marca Blendibox" ></img>
 		  </a></div>
           <button className="nav-cta" onClick={scrollToContact}>
             SOLICITAR ORÇAMENTO
