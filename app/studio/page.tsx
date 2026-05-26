@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import Script from "next/script"
-
+import { BAG_COLORS } from '@/data/bagColors'
 import Footer from "../Footer";
 import Menu from "../Menu";
 
@@ -34,38 +34,6 @@ const BAG_MODELS: BagModel[] = [
 ]
 
 let msgError = "N";
-
-const BAG_COLORS: BagColor[] = [
-  { hex: "#39161b", label: "Marrom",  grad: ["#39161b", "#39161b"] },
-  { hex: "#5d4934", label: "Marrom Terra",  grad: ["#5d4934", "#5d4934"] }, 
-  { hex: "#39083a", label: "Bergamota",  grad: ["#39083a", "#39083a"] },
-  { hex: "#b30037", label: "Vermelho Cherry",    grad: ["#b30037", "#b30037"] },
-  { hex: "#7d161d", label: "Vermelho Vinho",    grad: ["#7d161d", "#7d161d"] },
-  { hex: "#cfc2dd", label: "Lilás",       grad: ["#cfc2dd", "#cfc2dd"] },
-  { hex: "#f5dd6a", label: "Amarelo Gema",     grad: ["#f5dd6a", "#f5dd6a"] },
-  { hex: "#f1e731", label: "Amarelo Limão",  grad: ["#f1e731", "#f1e731"] },
-  { hex: "#ba9221", label: "Mostarda",  grad: ["#ba9221", "#ba9221"] }, 
-  { hex: "#80e14f", label: "Verde Flúor",  grad: ["#80e14f", "#80e14f"] },
-  { hex: "#3b4625", label: "Verde Oliva", grad: ["#3b4625", "#3b4625"] },
-  { hex: "#27744b", label: "Verde Bandeira", grad: ["#27744b", "#27744b"] },
-  { hex: "#fa656f", label: "Rosa Chiclete",     grad: ["#fa656f", "#fa656f"] },
-  { hex: "#e6bfbf", label: "Rosa Pêssego",     grad: ["#e6bfbf", "#e6bfbf"] },
-  { hex: "#d3806c", label: "Rosa Goiaba",     grad: ["#d3806c", "#d3806c"] },
-  { hex: "#ddb1cb", label: "Rosa bebê",         grad: ["#ddb1cb", "#ddb1cb"] },
-  { hex: "#d4c0b6", label: "Areia",     grad: ["#d4c0b6", "#d4c0b6"] },
-  { hex: "#F5F5F5", label: "Branco",   grad: ["#FFFFFF", "#E5E5E5"] },
-  { hex: "#efede1", label: "Off White",   grad: ["#efede1", "#efede1"] },
-  { hex: "#e6e6ec", label: "Ice",   grad: ["#e6e6ec", "#e6e6ec"] },
-  { hex: "#b1c7bf", label: "Lácteo",   grad: ["#b1c7bf", "#b1c7bf"] },
-  { hex: "#11132a", label: "Azul Marinho",       grad: ["#0d1025", "#11132a"] },
-  { hex: "#23324d", label: "Azul Índigo",  grad: ["#23324d", "#23324d"] },
-  { hex: "#58b1d0", label: "Azul Turqueza",  grad: ["#58b1d0", "#58b1d0"] },
-  { hex: "#b0d7f1", label: "Azul Bebê",  grad: ["#b0d7f1", "#b0d7f1"] },
-  { hex: "#181717", label: "Preto",       grad: ["#040505", "#040505"] },
-  { hex: "#abada6", label: "Silver",       grad: ["#abada6", "#abada6"] },
-  { hex: "#706e6b", label: "Dusty Grey",       grad: ["#706e6b", "#706e6b"] },
-]
-
 /* ═══════════════════════════════════════════════
    COLOR UTILS
 ═══════════════════════════════════════════════ */

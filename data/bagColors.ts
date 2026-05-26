@@ -1,0 +1,47 @@
+export interface BagColor {
+  hex: string
+  label: string
+  grad: [string, string]
+}
+
+export const BAG_COLORS: BagColor[] = [
+  { hex: "#000000", label: "Preto",          grad: ["#000000", "#000000"] },
+  { hex: "#1c734a", label: "Verde Bandeira", grad: ["#1c734a", "#1c734a"] },
+  { hex: "#ad1236", label: "Vermelho Cherry",grad: ["#ad1236", "#ad1236"] },
+  { hex: "#f7d1c2", label: "Rosa Pêssego",   grad: ["#f7d1c2", "#f7d1c2"] },
+  { hex: "#849bcc", label: "Azul Serenity",  grad: ["#849bcc", "#849bcc"] },
+  { hex: "#c7bfab", label: "Areia",          grad: ["#c7bfab", "#c7bfab"] },
+  { hex: "#ffffff", label: "Branco",         grad: ["#ffffff", "#ffffff"] },
+  { hex: "#78e045", label: "Verde Flúor",    grad: ["#78e045", "#78e045"] },
+  { hex: "#f2e814", label: "Amarelo Limão",  grad: ["#f2e814", "#f2e814"] },
+  { hex: "#d6826b", label: "Rosa Goiaba",    grad: ["#d6826b", "#d6826b"] },
+  { hex: "#384b60", label: "Azul Índigo",    grad: ["#384b60", "#384b60"] },
+  { hex: "#ff6a6e", label: "Rosa Chiclete",  grad: ["#ff6a6e", "#ff6a6e"] },
+  { hex: "#4fb0d1", label: "Azul Turqueza",  grad: ["#4fb0d1", "#4fb0d1"] },
+  { hex: "#abada6", label: "Silver",         grad: ["#abada6", "#abada6"] },
+  { hex: "#706e6b", label: "Dusty Grey",     grad: ["#706e6b", "#706e6b"] },
+  { hex: "#bc9312", label: "Mostarda",       grad: ["#bc9312", "#bc9312"] },
+  { hex: "#e6e6ec", label: "Ice",            grad: ["#e6e6ec", "#e6e6ec"] },
+  { hex: "#f2c226", label: "Amarelo Gema",   grad: ["#f2c226", "#f2c226"] },
+  { hex: "#91adbd", label: "Azul Imperial",  grad: ["#91adbd", "#91adbd"] },
+  { hex: "#5c343f", label: "Vinho",          grad: ["#5c343f", "#5c343f"] },
+  { hex: "#ff8f2e", label: "Laranja Neon",   grad: ["#ff8f2e", "#ff8f2e"] },
+  { hex: "#5c708c", label: "Azul Cobalto",   grad: ["#5c708c", "#5c708c"] },
+  { hex: "#87c7cc", label: "Azul Claro",     grad: ["#87c7cc", "#87c7cc"] },
+  { hex: "#a17345", label: "Havana",         grad: ["#a17345", "#a17345"] },
+  { hex: "#d93838", label: "Carmin",         grad: ["#d93838", "#d93838"] },
+  { hex: "#fa7333", label: "Orange",         grad: ["#fa7333", "#fa7333"] },
+  { hex: "#b5544d", label: "Páprica",        grad: ["#b5544d", "#b5544d"] },
+  { hex: "#2e4da7", label: "Azul",           grad: ["#2e4da7", "#2e4da7"] },
+  { hex: "#db3373", label: "Rosa Escuro",    grad: ["#db3373", "#db3373"] },
+  { hex: "#b0c7bf", label: "Lácteo",         grad: ["#b0c7bf", "#b0c7bf"] },
+  { hex: "#43544b", label: "Verde Garrafa",  grad: ["#43544b", "#43544b"] },
+  { hex: "#973a36", label: "Cobre Escuro",   grad: ["#973a36", "#973a36"] },
+  { hex: "#4d243d", label: "Beterraba",      grad: ["#4d243d", "#4d243d"] },
+  { hex: "#efede1", label: "Off White",      grad: ["#efede1", "#efede1"] },
+  { hex: "#f57896", label: "Rosa Pink",      grad: ["#f57896", "#f57896"] },
+  { hex: "#335459", label: "Azul Petróleo",  grad: ["#335459", "#335459"] },
+  { hex: "#78abba", label: "Light Blue",     grad: ["#78abba", "#78abba"] },
+  { hex: "#85997d", label: "Esmeralda",      grad: ["#85997d", "#85997d"] },
+  { hex: "#c7db63", label: "Green Lemon",    grad: ["#c7db63", "#c7db63"] },
+]

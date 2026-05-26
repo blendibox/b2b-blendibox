@@ -211,14 +211,13 @@ export default function RootLayout({
             align-items: center;
             justify-content: center;
             gap: 6px;
-            background: #FF2EA0;
+            background: #000000;
             color: #ffffff;
             font-size: 13px;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            padding: 10px 24px;
-            border-radius: 8px;
+            padding: 15px 24px;
             border: none;
             cursor: pointer;
             text-decoration: none;
@@ -228,8 +227,10 @@ export default function RootLayout({
             /* Sem dependência de variável CSS — valor fixo para render imediato */
           }
           .nav-cta:hover {
-            background: #E0007A;
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, #D4A574 0%, #B8824A 100%);
+            box-shadow: 0 15px 40px #d4a57466;
+			color:	#ffffff;
+			transform: translateY(-1px);
           }
           .nav-cta:active {
             transform: translateY(0);
