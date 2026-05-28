@@ -33,7 +33,7 @@ export default function Footer() {
 	  <footer className="footer">	  
 	   <div className="footer-container">      		 
 		  <div className="footer-logo">			
-			 <img src="/images/logoblendiboxbranco.png" ></img>
+			 <img src="/images/logoblendiboxbranco.png" alt="marca Blendibox"  ></img>
 		  </div>					
 	      <div className="footer-container">  
 		    <button className="hero-cta"><a href="/">HOME</a> </button> 
