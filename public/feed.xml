@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Gerado automaticamente por Blendibox Feed Generator -->
-<!-- Última atualização: 2026-10-20T10:41:11.183Z -->
+<!-- Última atualização: 2026-10-21T10:51:58.574Z -->
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
 <channel>
 <title>Blendibox</title>
@@ -15,6 +15,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-preto-692c55f5924b3-large.jpeg</g:image_link>
    <g:mpn>BBXMAXIPUFF_preto</g:mpn>
@@ -44,6 +48,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-branco-69565dca9aa13-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_branco</g:mpn>
@@ -73,6 +81,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-vermelho-vinho-69565e18b39a5-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_vinho</g:mpn>
@@ -102,6 +114,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-verdementa-69565dcb8df6e-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_verdementa</g:mpn>
@@ -131,6 +147,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-azul-marinho-69565dca9d92d-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_azulmarinho</g:mpn>
@@ -160,6 +180,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-azul-marinho-69727f311581f-large.png</g:image_link>
    <g:mpn>BBXNECC_azulmarinho</g:mpn>
@@ -189,6 +213,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-preto-69727f3024a21-large.png</g:image_link>
    <g:mpn>BBXNECC_preto</g:mpn>
@@ -218,6 +246,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-vermelho-vinho-69727f31274c6-large.png</g:image_link>
    <g:mpn>BBXNECC_vinho</g:mpn>
@@ -247,6 +279,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>29.00 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.8 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/estojo-ou-necessaire-de-pelucia-com-bolso-lateral-fecho-ziper-blendibox-azul-bebe-675c3916d13af-large.png</g:image_link>
    <g:mpn>YYLNYC9FN</g:mpn>
@@ -276,6 +312,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>29.00 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.8 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/estojo-ou-necessaire-de-pelucia-com-bolso-lateral-fecho-ziper-blendibox-rosa-bebe-675c391704851-large.png</g:image_link>
    <g:mpn>JEMBUCS3K</g:mpn>
@@ -305,6 +345,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>29.00 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.8 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/estojo-ou-necessaire-de-pelucia-com-bolso-lateral-fecho-ziper-blendibox-marrom-caramelo-675c39172869e-large.png</g:image_link>
    <g:mpn>TM797WT9G</g:mpn>
@@ -334,6 +378,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-preto-6867ea8380868-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_preto</g:mpn>
@@ -363,6 +411,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-branco-6867ea840ddca-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_branco</g:mpn>
@@ -392,6 +444,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-azul-marinho-6867ea842daac-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_marinho</g:mpn>
@@ -421,6 +477,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-vermelho-vinho-6867ea8654fda-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_vinho</g:mpn>
@@ -450,6 +510,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>25.95 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.19 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/4-xuxinhas-de-cetim-scrunchie-antifrizz-blendibox-preto-67a3586c7aa79-large.png</g:image_link>
    <g:mpn>BBX_SCRUNCHIE4_preto</g:mpn>
@@ -478,6 +542,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>25.95 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.19 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/4-xuxinhas-de-cetim-scrunchie-antifrizz-blendibox-vermelho-67a3586bd6330-large.png</g:image_link>
    <g:mpn>BBX_SCRUNCHIE4_v</g:mpn>
@@ -506,6 +574,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>25.95 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.19 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/4-xuxinhas-de-cetim-scrunchie-antifrizz-blendibox-pink-67a3586bd46e2-large.png</g:image_link>
    <g:mpn>BBX_SCRUNCHIE4_pink</g:mpn>
@@ -534,6 +606,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>25.95 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.19 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/4-xuxinhas-de-cetim-scrunchie-antifrizz-blendibox-cinza-67a3586c27028-large.png</g:image_link>
    <g:mpn>BBX_SCRUNCHIE4_cinza</g:mpn>
@@ -562,6 +638,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>25.95 BRL</g:price>
+   <g:installment>
+    <g:months>5</g:months>
+    <g:amount>5.19 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/4-xuxinhas-de-cetim-scrunchie-antifrizz-blendibox-sortidas-67a3586e0d199-large.png</g:image_link>
    <g:mpn>BBX_SCRUNCHIE4_cores</g:mpn>
@@ -590,6 +670,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-marrom-696a6a0a26c5c-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_marrom</g:mpn>
@@ -619,6 +703,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-marrom-6867ea8472d01-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_marrom</g:mpn>
@@ -648,6 +736,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-bege-6867ea84e5e99-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_bege</g:mpn>
@@ -677,6 +769,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-rosa-6867ea863bcc4-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_rosa</g:mpn>
@@ -706,6 +802,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-azul-serenity-688fc71256b66-large.png</g:image_link>
    <g:mpn>bbx_totemaxibolsa_aserenity</g:mpn>
@@ -735,6 +835,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>150.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>12.5 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/tote-maxi-bolsa-puffer-adulto-feminina-blendibox-vermelho-cherry-696a6a5ed81a1-large.jpg</g:image_link>
    <g:mpn>bbx_totemaxibolsa_vcherry</g:mpn>
@@ -764,6 +868,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-vermelho-cherry-696a6a0a902f6-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_vcherry</g:mpn>
@@ -793,6 +901,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-azul-serenity-69565dcaa2c43-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_aserenity</g:mpn>
@@ -822,6 +934,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-creme-69565dcbc6148-large.png</g:image_link>
    <g:mpn>BBXMAXIPUFF_creme</g:mpn>
@@ -851,6 +967,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>89.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>7.49 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-rosa-pessego-68c33787f06ee-large.jpg</g:image_link>
    <g:mpn>BBXMAXIPUFF_rpessego</g:mpn>
@@ -880,6 +1000,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>49.90 BRL</g:price>
+   <g:installment>
+    <g:months>9</g:months>
+    <g:amount>5.54 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/kit-com-3-chaveiros-pompom-para-bolsas-blendibox-68e26c357c713-large.png</g:image_link>
    <g:mpn>bbx_3ChaveirosPompom</g:mpn>
@@ -910,6 +1034,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b721d303ee/691b721d303f6.jpg</g:image_link>
    <g:mpn>BBXPUFFTRVS_preto</g:mpn>
@@ -936,6 +1064,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71baa7478/691b71baa747a.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_abebe</g:mpn>
@@ -962,6 +1094,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71c2ccd5b/691b71c2ccd64.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_anoite</g:mpn>
@@ -988,6 +1124,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71c583786/691b71c58378d.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_aserenity</g:mpn>
@@ -1014,6 +1154,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71c823cc1/691b71c823cc8.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_bege</g:mpn>
@@ -1040,6 +1184,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71cb194fb/691b71cb19501.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_branco</g:mpn>
@@ -1066,6 +1214,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71cedfe83/691b71cedfe85.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_marrom</g:mpn>
@@ -1092,6 +1244,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71d4394c2/691b71d4394c9.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_rbebe</g:mpn>
@@ -1118,6 +1274,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71d70414e/691b71d704156.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_rgoiaba</g:mpn>
@@ -1144,6 +1304,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71dae19c0/691b71dae19c8.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_rpessego</g:mpn>
@@ -1170,6 +1334,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71dd32e89/691b71dd32e91.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_vmenta</g:mpn>
@@ -1196,6 +1364,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://king-assets.yampi.me/dooki/691b71e03c101/691b71e03c103.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_vcherry</g:mpn>
@@ -1222,6 +1394,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>110.00 BRL</g:price>
    <g:sale_price>110.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>8.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-maxi-puffer-transversal-bolsa-transversal-puffer-blendibox-vinho-691b732246c60-large.png</g:image_link>
    <g:mpn>BBXPUFFTRVS_vvinho</g:mpn>
@@ -1249,6 +1425,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-alca-listrada-oversized-blendibox-bege-6929fe6958ff4-large.png</g:image_link>
    <g:mpn>bbx_bpviagem_bege</g:mpn>
@@ -1278,6 +1458,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-preto-6929b27310089-large.jpg</g:image_link>
    <g:mpn>bbx_bpviagem_vinho</g:mpn>
@@ -1307,6 +1491,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-vinho-6929b27356bda-large.jpg</g:image_link>
    <g:mpn>vinho</g:mpn>
@@ -1336,6 +1524,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-azul-bebe-6929b271734ae-large.png</g:image_link>
    <g:mpn>bbx_bpviagem_abebe</g:mpn>
@@ -1365,6 +1557,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-rosa-bebe-6929b271e86ce-large.jpg</g:image_link>
    <g:mpn>bbx_bpviagem_rbebe</g:mpn>
@@ -1394,6 +1590,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-branco-6929b274bdcb3-large.png</g:image_link>
    <g:mpn>bbx_bpviagem_branco</g:mpn>
@@ -1423,6 +1623,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-vermelho-6929b274be1dc-large.png</g:image_link>
    <g:mpn>bbx_bpviagem_vcherry</g:mpn>
@@ -1452,6 +1656,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-azul-marinho-6929b2759c332-large.jpg</g:image_link>
    <g:mpn>bbx_bpviagem_amarinho</g:mpn>
@@ -1481,6 +1689,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>190.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>15.83 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-puffer-viagem-grande-com-alca-listrada-verao-blendibox-marrom-6929b27667242-large.jpg</g:image_link>
    <g:mpn>bbx_bpviagem_marrom</g:mpn>
@@ -1510,6 +1722,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-marrom-69727f30d6dbb-large.png</g:image_link>
    <g:mpn>BBXNECC_marrom</g:mpn>
@@ -1539,6 +1755,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-branco-69727f314486c-large.png</g:image_link>
    <g:mpn>BBXNECC_branco</g:mpn>
@@ -1568,6 +1788,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-bege-69727f310b8ff-large.png</g:image_link>
    <g:mpn>BBXNECC_bege</g:mpn>
@@ -1598,6 +1822,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>269.00 BRL</g:price>
    <g:sale_price>269.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>19.08 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-copa-do-mundo-2026-da-torcedora-blendibox-verde-amarelo-697a0a8fc8a7e-large.png</g:image_link>
    <g:mpn>BBX2026MTP_VAMARELO</g:mpn>
@@ -1627,6 +1855,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>269.00 BRL</g:price>
    <g:sale_price>269.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>19.08 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-copa-do-mundo-2026-da-torcedora-blendibox-amarelo-verde-697a0cf785a64-large.png</g:image_link>
    <g:mpn>BBX2026MTP_AVERDE</g:mpn>
@@ -1656,6 +1888,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>269.00 BRL</g:price>
    <g:sale_price>269.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>19.08 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-copa-do-mundo-2026-da-torcedora-blendibox-preto-azul-697a0cf7ae730-large.png</g:image_link>
    <g:mpn>BBX2026MTP_PAZUL</g:mpn>
@@ -1685,6 +1921,10 @@
    <g:brand>Blendibox</g:brand>
    <g:price>269.00 BRL</g:price>
    <g:sale_price>269.00 BRL</g:sale_price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>19.08 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-copa-do-mundo-2026-da-torcedora-blendibox-azul-branco-697a0cf77cf78-large.png</g:image_link>
    <g:mpn>BBX2026MTP_ABRANCO</g:mpn>
@@ -1713,6 +1953,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-verde-bandeira-698753ad4be6a-large.png</g:image_link>
    <g:mpn>BBXNECC_vbandeira</g:mpn>
@@ -1742,6 +1986,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-amarelo-698753af75581-large.png</g:image_link>
    <g:mpn>BBXNECC_amarelo</g:mpn>
@@ -1771,6 +2019,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>39.90 BRL</g:price>
+   <g:installment>
+    <g:months>7</g:months>
+    <g:amount>5.7 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/necessaire-puffer-blendibox-azul-cobalto-698753ae79cfe-large.png</g:image_link>
    <g:mpn>BBXNECC_acobalto</g:mpn>
@@ -1800,6 +2052,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>199.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>16.66 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-concha-sereia-urbana-impermeavel-perolado-rosa-69f0aaa891e4c-large.jpeg</g:image_link>
    <g:mpn>BBXSURB_ROSA</g:mpn>
@@ -1829,6 +2085,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>199.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>16.66 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-concha-sereia-urbana-impermeavel-perolado-areia-69f0aaa9ccc9e-large.png</g:image_link>
    <g:mpn>BBXSURB_AREIA</g:mpn>
@@ -1858,6 +2118,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>199.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>16.66 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-concha-sereia-urbana-impermeavel-perolado-lilas-69f0aaab9cd90-large.png</g:image_link>
    <g:mpn>BBXSURB_LILAS</g:mpn>
@@ -1887,6 +2151,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>199.90 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>16.66 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-tote-puffer-concha-sereia-urbana-impermeavel-perolado-azul-69f0aaabba702-large.png</g:image_link>
    <g:mpn>BBXSURB_AZUL</g:mpn>
@@ -1916,6 +2184,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-areia-6a0fee08ddca7-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_AREIA</g:mpn>
@@ -1945,6 +2217,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-branco-6a0fee0a3b924-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_BRANCO</g:mpn>
@@ -1974,6 +2250,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-amarelo-gema-6a0fee0a90233-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_AGEMA</g:mpn>
@@ -2003,6 +2283,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-verde-garrafa-6a0e435356b6c-large.png</g:image_link>
    <g:mpn>BBX_UTILITY_VGARRAFA</g:mpn>
@@ -2032,6 +2316,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-verde-oliva-6a0e43eed1855-large.png</g:image_link>
    <g:mpn>BBX_UTILITY_VOLIVA</g:mpn>
@@ -2061,6 +2349,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-rosa-bebe-6a0fee0beca4e-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_RBEBE</g:mpn>
@@ -2090,6 +2382,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-rosa-pessego-6a0fee0b6c2ae-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_RPESSEGO</g:mpn>
@@ -2119,6 +2415,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-lilas-6a0fee0b72062-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_LILAS</g:mpn>
@@ -2148,6 +2448,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-preto-6a0fee0ab6a8f-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_PRETO</g:mpn>
@@ -2177,6 +2481,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-azul-serenity-6a0fee0b6d4e1-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_ASERENITY</g:mpn>
@@ -2206,6 +2514,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-beterraba-6a0fee0bd4d03-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_BETERRABA</g:mpn>
@@ -2235,6 +2547,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-verde-bandeira-6a0fee0e8de52-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_VBANDEIRA</g:mpn>
@@ -2264,6 +2580,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-azul-cobalto-6a0fee0c6a7f7-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_ACOBALTO</g:mpn>
@@ -2293,6 +2613,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-vermelho-cherry-6a0fee0d254b9-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_VCHERRY</g:mpn>
@@ -2322,6 +2646,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-marrom-6a0fee0db1591-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_MARROM</g:mpn>
@@ -2351,6 +2679,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-vermelho-vinho-6a0fee0dd4b4c-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_VVINHO</g:mpn>
@@ -2380,6 +2712,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>219.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>18.25 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-utility-note-tote-puffer-bolsos-laterais-para-garrafa-azul-marinho-6a0fee0f1ccc4-large.jpg</g:image_link>
    <g:mpn>BBX_UTILITY_AMARINHO</g:mpn>
@@ -2409,6 +2745,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>79.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>6.58 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-verde-6a1b5ee457d0d-large.jpg</g:image_link>
    <g:mpn>bbx_selecao2026_verde</g:mpn>
@@ -2438,6 +2778,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>79.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>6.58 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-amarelo-alca-listrada-6a1b1b68a26df-large.png</g:image_link>
    <g:mpn>bbx_selecao2026_amarelo</g:mpn>
@@ -2467,6 +2811,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>59.00 BRL</g:price>
+   <g:installment>
+    <g:months>11</g:months>
+    <g:amount>5.36 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-preto-6a1b5ee477321-large.jpg</g:image_link>
    <g:mpn>bbx_selecao2026_preto</g:mpn>
@@ -2496,6 +2844,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>79.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>6.58 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-amarelo-alca-listrada-6a1b5ee2b6c77-large.jpg</g:image_link>
    <g:mpn>bbx_selecao2026_al_amarela</g:mpn>
@@ -2524,6 +2876,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>79.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>6.58 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-verde-alca-listrada-6a1b5ee2930fe-large.png</g:image_link>
    <g:mpn>bbx_selecao2026_al_verde</g:mpn>
@@ -2552,6 +2908,10 @@
    <g:condition>new</g:condition>
    <g:brand>Blendibox</g:brand>
    <g:price>79.00 BRL</g:price>
+   <g:installment>
+    <g:months>12</g:months>
+    <g:amount>6.58 BRL</g:amount>
+   </g:installment>
    <g:availability>in stock</g:availability>
    <g:image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-3-em-1-selecao-edicao-especial-2026-blendibox-preto-alca-listrada-6a1b5ee4da9de-large.png</g:image_link>
    <g:mpn>bbx_selecao2026_al_preto</g:mpn>
