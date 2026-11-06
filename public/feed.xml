@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Gerado automaticamente por Blendibox Feed Generator -->
-<!-- Última atualização: 2026-11-05T13:44:18.449Z -->
+<!-- Última atualização: 2026-11-06T13:28:31.747Z -->
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
 <channel>
 <title>Blendibox</title>
@@ -2382,7 +2382,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-preto-6ae690202f510-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_preto</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>preto</g:color>
   <g:gender>Female</g:gender>
@@ -2417,7 +2417,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-marrom-chocolate-6ae690210ec08-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_marrom</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>marrom</g:color>
   <g:gender>Female</g:gender>
@@ -2453,7 +2453,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-rosa-pop-6ae6901f938d9-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_rpop</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>rpop</g:color>
   <g:gender>Female</g:gender>
@@ -2488,7 +2488,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-azul-luminoso-6ae74c3704463-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_aluminoso</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>aluminoso</g:color>
   <g:gender>Female</g:gender>
@@ -2523,7 +2523,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-azul-marinho-6ae6901f99cb9-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_amarinho</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>amarinho</g:color>
   <g:gender>Female</g:gender>
@@ -2558,7 +2558,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-verde-lima-6ae6902171708-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_vlima</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>vlima</g:color>
   <g:gender>Female</g:gender>
@@ -2593,7 +2593,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-verde-garrafa-6ae74c3789724-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_vgarrafa</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>vgarrafa</g:color>
   <g:gender>Female</g:gender>
@@ -2628,7 +2628,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-verde-oliva-6ae74c3757dbf-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_voliva</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>voliva</g:color>
   <g:gender>Female</g:gender>
@@ -2663,7 +2663,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-laranja-energia-6ae6902174744-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_lenergia</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>lenergia</g:color>
   <g:gender>Female</g:gender>
@@ -2698,7 +2698,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-amarelo-solar-6ae690219c488-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_asolar</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>asolar</g:color>
   <g:gender>Female</g:gender>
@@ -2733,7 +2733,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-lilas-suave-6ae69021bac0e-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_lsuave</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>lsuave</g:color>
   <g:gender>Female</g:gender>
@@ -2768,7 +2768,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-branco-6ae69021d7ba5-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_branco</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>branco</g:color>
   <g:gender>Female</g:gender>
@@ -2803,7 +2803,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-marrom-avermelhado-6ae74c38ac86f-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_mavermelhado</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>mavermelhado</g:color>
   <g:gender>Female</g:gender>
@@ -2838,7 +2838,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-bege-6ae74c3830498-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_bege</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>bege</g:color>
   <g:gender>Female</g:gender>
@@ -2873,7 +2873,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-vermelho-cherry-6ae74c38dd6eb-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_vcherry</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>vcherry</g:color>
   <g:gender>Female</g:gender>
@@ -2908,7 +2908,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-rosa-pessego-6ae74c38db331-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_rpessego</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>rpessego</g:color>
   <g:gender>Female</g:gender>
@@ -2943,7 +2943,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-rosa-bebe-6ae74c38d389a-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_rbebe</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>rbebe</g:color>
   <g:gender>Female</g:gender>
@@ -2978,7 +2978,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-azul-serenity-6ae75d3b078aa-large.jpg</g:additional_image_link>
    <g:mpn>bbx_cloud_aserenity</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>0</g:quantity>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>aserenity</g:color>
   <g:gender>Female</g:gender>
@@ -3014,6 +3014,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/bolsa-cloud-puffer-de-ombro-transversal-feminina-g-blendibox-vermelho-vinho-6ae7a2097ebfc-large.png</g:additional_image_link>
    <g:mpn>bbx_cloud_vvinho</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>5</g:quantity>
     <g:sale_price>160.00 BRL</g:sale_price>
   <g:color>vvinho</g:color>
   <g:gender>Female</g:gender>
