@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Gerado automaticamente por Blendibox Feed Generator -->
-<!-- Última atualização: 2026-11-06T13:28:31.747Z -->
+<!-- Última atualização: 2026-11-07T12:08:10.554Z -->
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
 <channel>
 <title>Blendibox</title>
@@ -63,7 +63,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-branco-69565dca9aa13-large.png</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_branco</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>50</g:quantity>
+   <g:quantity>20</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>branco</g:color>
@@ -100,7 +100,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-vermelho-vinho-6ae1ec90b84c7-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_vinho</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>50</g:quantity>
+   <g:quantity>20</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>vinho</g:color>
@@ -137,7 +137,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-azul-marinho-69565e19e0608-large.png</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_azulmarinho</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>50</g:quantity>
+   <g:quantity>20</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>azulmarinho</g:color>
@@ -984,7 +984,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-creme-6ae1ee1760572-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_creme</g:mpn>
    <g:product_type>Bolsas</g:product_type>
-   <g:quantity>50</g:quantity>
+   <g:quantity>20</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>creme</g:color>
@@ -2136,6 +2136,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-azul-luminoso-6ae1ee451359f-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_aluminoso</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>2</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>aluminoso</g:color>
@@ -2172,6 +2173,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-rosa-pop-6ae1ee4502407-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_rpop</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>5</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>rpop</g:color>
@@ -2242,6 +2244,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-laranja-energia-6ae1ee4670ffe-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_lenergia</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>2</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>lenergia</g:color>
@@ -2277,6 +2280,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-amarelo-solar-6ae1ee46b6f6d-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_asolar</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>3</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>asolar</g:color>
@@ -2313,6 +2317,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-lilas-suave-6ae1ee471130b-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_lsuave</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>3</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>lsuave</g:color>
@@ -2348,6 +2353,7 @@
    <g:additional_image_link>https://images.yampi.me/assets/stores/blendibox/uploads/images/maxi-bolsa-puffer-blendibox-verde-oliva-6ae1ee468968b-large.jpg</g:additional_image_link>
    <g:mpn>BBXMAXIPUFF_voliva</g:mpn>
    <g:product_type>Bolsas</g:product_type>
+   <g:quantity>2</g:quantity>
    <g:custom_label_0>Bolsas Blendibox</g:custom_label_0>
     <g:sale_price>89.90 BRL</g:sale_price>
   <g:color>voliva</g:color>
