@@ -200,8 +200,8 @@ export default function LandingPage() {
     capturaLead("whatsapp");
     const linhas = [
       comBordado
-        ? "Olá! Quero um orçamento de bolsas puffer personalizadas."
-        : "Olá! Quero um orçamento de bolsas puffer.",
+        ? `Olá! Quero um orçamento de ${qtd} bolsas puffer personalizadas.`
+        : `Olá! Quero um orçamento de ${qtd} bolsas puffer.`,
       `• Empresa/marca: ${empresa.trim()}`,
       `• WhatsApp p/ retorno: ${whatsapp.trim()}`,
       `• Modelo: ${modeloSel ? modeloSel.nome : "Ainda não sei"}`,
