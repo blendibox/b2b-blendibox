@@ -423,7 +423,7 @@ export default function LandingPage() {
                     <div className="qf-est-prazo">⏱ Prazo estimado: <strong>~{prazoLabel}</strong></div>
                     <div className="qf-est-note">
                       {temEstimativa && comBordado ? "Bordado 1 cor incluso (consulte-nos para até 3 cores). " : ""}
-                      Prazo a partir da aprovação da arte e do pagamento. Valores e prazo finais confirmados no orçamento. Consulte-nos para fazer um protótipo.
+                      Prazo a partir do início da produção, que ocorre depois da aprovação da arte (e protótipo, se houver) e do pagamento (à vista ou sinal 50%). Valores e prazo finais confirmados no orçamento. Consulte-nos para fazer um protótipo.
                     </div>
                   </>
                 ) : (
