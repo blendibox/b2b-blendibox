@@ -56,6 +56,31 @@ export default {
       `<td style="padding:4px 10px;font-weight:600">${esc(v)}</td></tr>`;
 
     const waDigits = String(data.whatsapp ?? "").replace(/\D/g, "");
+    // Formato internacional p/ wa.me: inclui o 55 quando o número veio só com DDD
+    const waIntl = waDigits && waDigits.length <= 11 && !waDigits.startsWith("55")
+      ? "55" + waDigits
+      : waDigits;
+
+    // Em abandono, abre o WhatsApp já com uma mensagem de recuperação amigável
+    // (pré-preenchida — você revisa e envia). Personaliza com modelo/quantidade.
+    const modeloOk = data.modelo && data.modelo !== "não informado";
+    const temQtd = data.quantidade != null && data.quantidade !== "";
+    let detalhe = "";
+    if (temQtd && modeloOk) detalhe = ` de ${data.quantidade} ${data.modelo}`;
+    else if (modeloOk) detalhe = ` do modelo ${data.modelo}`;
+    const empresaTxt = data.empresa ? ` para a ${data.empresa}` : "";
+    const recado =
+      `Oi! 💙 Aqui é da Blendibox. Vi que você começou a montar um orçamento` +
+      `${detalhe}${empresaTxt} no nosso site e talvez tenha ficado alguma dúvida. ` +
+      `Posso te ajudar a finalizar? Qualquer coisa, estou por aqui!`;
+
+    const waHref = abandono
+      ? `https://wa.me/${waIntl}?text=${encodeURIComponent(recado)}`
+      : `https://wa.me/${waIntl}`;
+    const waLabel = abandono
+      ? "Chamar no WhatsApp com mensagem de recuperação →"
+      : "Abrir conversa no WhatsApp →";
+
     const html = `
       <div style="font-family:system-ui,Arial,sans-serif;max-width:520px">
         <h2 style="margin:0 0 4px">${quem}</h2>
@@ -74,7 +99,7 @@ export default {
           ${linha("Prazo", data.prazo)}
           ${linha("Quando", data.ts)}
         </table>
-        ${waDigits ? `<p style="margin:12px 0 0"><a href="https://wa.me/${waDigits}">Abrir conversa no WhatsApp →</a></p>` : ""}
+        ${waIntl ? `<p style="margin:12px 0 0"><a href="${waHref}">${waLabel}</a></p>` : ""}
       </div>`;
 
     const r = await fetch("https://api.resend.com/emails", {
