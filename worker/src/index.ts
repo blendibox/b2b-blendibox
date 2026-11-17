@@ -45,8 +45,8 @@ export default {
     const abandono = data.motivo === "abandono";
     const quem = esc(data.empresa) !== "—" ? esc(data.empresa) : esc(data.whatsapp);
     const assunto = abandono
-      ? `🟡 Lead abandonou simulação — ${quem}`
-      : `🟢 Nova simulação — ${quem}`;
+      ? `\u{1F7E1} Lead abandonou simulação — ${quem}`
+      : `\u{1F7E2} Nova simulação — ${quem}`;
     const motivoTxt = abandono
       ? "ABANDONO (preencheu o form mas não abriu o WhatsApp)"
       : "Clicou em enviar no WhatsApp";
@@ -70,7 +70,7 @@ export default {
     else if (modeloOk) detalhe = ` do modelo ${data.modelo}`;
     const empresaTxt = data.empresa ? ` para a ${data.empresa}` : "";
     const recado =
-      `Oi! 💙 Aqui é da Blendibox. Vi que você começou a montar um orçamento` +
+      `Oi! \u{1F499} Aqui é da Blendibox. Vi que você começou a montar um orçamento` +
       `${detalhe}${empresaTxt} no nosso site e talvez tenha ficado alguma dúvida. ` +
       `Posso te ajudar a finalizar? Qualquer coisa, estou por aqui!`;
 
