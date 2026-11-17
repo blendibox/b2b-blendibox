@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blendibox-lead",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-17",
+  "observability": { "enabled": true },
+  "vars": {
+    // Origem permitida (CORS). Troque se o domínio do site mudar.
+    "ALLOWED_ORIGIN": "https://presskit.blendibox.com.br",
+    // Remetente. Para produção confiável, verifique um domínio na Resend
+    // e troque por algo como "Blendibox <leads@blendibox.com.br>".
+    "FROM_EMAIL": "Blendibox Leads <onboarding@resend.dev>"
+  }
+  // Segredos (NÃO ficam aqui — defina com `wrangler secret put`):
+  //   RESEND_API_KEY  -> chave da API Resend
+  //   TO_EMAIL        -> e-mail que recebe os leads
+}
