@@ -36,7 +36,7 @@ Fica **separado** do site (o site é Cloudflare Pages / estático; este é um Wo
    npm run deploy
    ```
    O Wrangler imprime a URL pública do Worker, algo como
-   `https://blendibox-lead.<sua-conta>.workers.dev`.
+   `https://blendibox-lead-b2b.<sua-conta>.workers.dev`.
 
 6. **Me mandar essa URL** — eu ligo ela no `CAPTURE_ENDPOINT` do site
    (`app/page.tsx`) e testamos a captura ponta a ponta.
@@ -50,7 +50,7 @@ como `Blendibox <leads@blendibox.com.br>`. Depois rode `npm run deploy` de novo.
 
 ## Testar sem o site
 ```bash
-curl -X POST https://blendibox-lead.<sua-conta>.workers.dev \
+curl -X POST https://blendibox-lead-b2b.<sua-conta>.workers.dev \
   -H "Content-Type: application/json" \
   -d '{"motivo":"abandono","whatsapp":"11990000000","empresa":"Teste","modelo":"Maxi Tote","quantidade":100,"cor":"Preto","personalizacao":"com bordado","prazo":"5 semanas","ts":"2026-11-17T12:00:00Z"}'
 ```
