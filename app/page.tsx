@@ -16,6 +16,10 @@ const BORDADO = 12.0;
 const UNID_POR_SEMANA = 25; // produção base do corpo — ajuste aqui
 const BORDADOS_POR_DIA = 40; // bordado: 5/hora × 8h — somado ao prazo quando há personalização
 
+// Endpoint do Worker (Cloudflare + Resend) que recebe a captura de lead e envia por e-mail.
+// Deixe "" enquanto o Worker não estiver no ar: a captura fica desativada e o form segue funcionando.
+const CAPTURE_ENDPOINT = "https://blendibox-lead-b2b.blendibox.workers.dev";
+
 const MODELOS = [
   { id: "maxi-tote",   nome: "Maxi Tote",   base: 150.0,  img: "/images/bolsa_maxitote_medidas.png",  dim: "40 × 35 cm",            use: "Mais espaço — campanhas e dia a dia." },
   { id: "tote-g",      nome: "Tote G",      base: 160.0,  img: "/images/toteg.webp",                  dim: "45 × 36 × 12 cm",       use: "A maior — viagem, praia, muito espaço." },
@@ -41,6 +45,10 @@ const dataPrevistaISO = (semanas: number) => {
 };
 const dataBR = (iso: string) => (iso ? new Date(iso + "T00:00:00").toLocaleDateString("pt-BR") : "");
 
+// WhatsApp: só dígitos; válido = 10 a 13 dígitos (com ou sem DDI/DDD)
+const soDigitos = (s: string) => s.replace(/\D/g, "");
+const whatsappValido = (s: string) => { const d = soDigitos(s); return d.length >= 10 && d.length <= 13; };
+
 export default function LandingPage() {
 
   /* ── Form de orçamento ── */
@@ -54,6 +62,10 @@ export default function LandingPage() {
   const [dataTouched, setDataTouched] = useState(false);
   const [logo, setLogo]         = useState("");
   const [erro, setErro]         = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [consent, setConsent]   = useState(false);
+  const abandonoRef  = React.useRef(false);
+  const hidratadoRef = React.useRef(false);
 
   const openForm = () => { setErro(""); setShowForm(true); };
 
@@ -84,14 +96,112 @@ export default function LandingPage() {
     return () => { try { delete (window as any).openQuoteForm; } catch {} };
   }, []);
 
+  // Retomar simulação salva no navegador (localStorage) — só no cliente, após montar
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("blendibox_orc");
+      if (raw) {
+        const s = JSON.parse(raw);
+        if (s.whatsapp) setWhatsapp(s.whatsapp);
+        if (s.empresa)  setEmpresa(s.empresa);
+        if (s.modeloId) setModeloId(s.modeloId);
+        if (typeof s.qtd === "number") setQtd(s.qtd);
+        if (s.cor) setCor(s.cor);
+        if (typeof s.comBordado === "boolean") setComBordado(s.comBordado);
+        if (s.data) { setData(s.data); setDataTouched(true); }
+        if (s.logo) setLogo(s.logo);
+      }
+    } catch {}
+    hidratadoRef.current = true;
+  }, []);
+
+  // Persistir a simulação enquanto a pessoa preenche
+  useEffect(() => {
+    if (!hidratadoRef.current) return;
+    try {
+      localStorage.setItem("blendibox_orc", JSON.stringify({
+        whatsapp, empresa, modeloId, qtd, cor, comBordado, data, logo,
+      }));
+    } catch {}
+  }, [whatsapp, empresa, modeloId, qtd, cor, comBordado, data, logo]);
+
+  // Monta o payload da simulação para captura (e-mail via Worker)
+  function montarPayload(motivo: string) {
+    return {
+      motivo,
+      whatsapp: whatsapp.trim(),
+      empresa: empresa.trim(),
+      modelo: modeloSel ? modeloSel.nome : (modeloId || "não informado"),
+      quantidade: typeof qtd === "number" ? qtd : null,
+      cor: cor || "a definir",
+      personalizacao: comBordado ? "com bordado" : "sem bordado",
+      logo: comBordado ? (logo || "a confirmar") : "—",
+      data: data || "sem data",
+      estimativaUnit: temEstimativa ? Number(unit.toFixed(2)) : null,
+      estimativaTotal: temEstimativa ? Number(total.toFixed(2)) : null,
+      prazo: typeof qtd === "number" ? prazoLabel : null,
+      origem: typeof window !== "undefined" ? window.location.href : "",
+      ts: new Date().toISOString(),
+    };
+  }
+
+  // Envia a simulação ao Worker. Só captura com WhatsApp válido + consentimento.
+  function capturaLead(motivo: string, usarBeacon = false) {
+    if (!CAPTURE_ENDPOINT) return;            // Worker ainda não configurado
+    if (!whatsappValido(whatsapp)) return;
+    if (!consent) return;
+    try {
+      const body = JSON.stringify(montarPayload(motivo));
+      if (usarBeacon && navigator.sendBeacon) {
+        navigator.sendBeacon(CAPTURE_ENDPOINT, new Blob([body], { type: "application/json" }));
+      } else {
+        fetch(CAPTURE_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body,
+          keepalive: true,
+        }).catch(() => {});
+      }
+    } catch {}
+  }
+
+  // Rede de segurança: preencheu WhatsApp + consentiu e saiu sem enviar → beacon (best-effort)
+  useEffect(() => {
+    const onHide = () => {
+      if (document.visibilityState === "hidden" && !abandonoRef.current && whatsappValido(whatsapp) && consent) {
+        abandonoRef.current = true;
+        capturaLead("abandono", true);
+      }
+    };
+    document.addEventListener("visibilitychange", onHide);
+    window.addEventListener("pagehide", onHide);
+    return () => {
+      document.removeEventListener("visibilitychange", onHide);
+      window.removeEventListener("pagehide", onHide);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [whatsapp, consent, empresa, modeloId, qtd, cor, comBordado, data, logo]);
+
   function enviarWhatsapp() {
+    if (!whatsappValido(whatsapp)) {
+      setErro("Informe um WhatsApp válido com DDD para continuar.");
+      return;
+    }
     if (!empresa.trim() || !modeloId || typeof qtd !== "number") {
       setErro("Preencha empresa, modelo e quantidade para continuar.");
       return;
     }
+    if (!consent) {
+      setErro("Marque o consentimento para prosseguir.");
+      return;
+    }
+    // Captura o lead (e-mail via Worker) antes de abrir o WhatsApp; evita beacon duplicado
+    abandonoRef.current = true;
+    capturaLead("whatsapp");
     const linhas = [
       "Olá! Quero um orçamento de bolsas puffer personalizadas.",
       `• Empresa/marca: ${empresa.trim()}`,
+      `• WhatsApp p/ retorno: ${whatsapp.trim()}`,
       `• Modelo: ${modeloSel ? modeloSel.nome : "Ainda não sei"}`,
       `• Quantidade: ${qtd} unidades`,
       `• Cor: ${cor || "a definir"}`,
@@ -331,6 +441,16 @@ export default function LandingPage() {
 
             <div className="qf-body">
               <label className="qf-field">
+                <span>WhatsApp *</span>
+                <input type="tel" inputMode="tel" value={whatsapp}
+                  onChange={(e) => setWhatsapp(e.target.value)}
+                  placeholder="(11) 90000-0000" />
+                <small style={{ fontSize: '.74rem', color: '#766654', marginTop: '.1rem' }}>
+                  Pra te enviarmos a simulação e dar sequência — com DDD.
+                </small>
+              </label>
+
+              <label className="qf-field">
                 <span>Empresa / marca *</span>
                 <input type="text" value={empresa} onChange={(e) => setEmpresa(e.target.value)} placeholder="Nome da sua empresa ou marca" />
               </label>
@@ -433,6 +553,11 @@ export default function LandingPage() {
                 )}
               </div>
 
+              <label className="qf-consent">
+                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+                <span>Autorizo a Blendibox a usar meu WhatsApp para enviar esta simulação e dar continuidade ao orçamento.</span>
+              </label>
+
               {erro && <div className="qf-erro">{erro}</div>}
             </div>
 
@@ -482,6 +607,11 @@ export default function LandingPage() {
           font-family: inherit; outline: none; transition: border-color .15s;
         }
         .qf-field input:focus, .qf-field select:focus { border-color: #c9a36b; }
+        .qf-consent {
+          display: flex; align-items: flex-start; gap: .5rem;
+          font-size: .8rem; color: #6b5e52; line-height: 1.4; cursor: pointer;
+        }
+        .qf-consent input { width: auto; margin-top: .15rem; flex-shrink: 0; }
         .qf-preview {
           display: flex; align-items: center; gap: .9rem;
           background: #faf6f0; border: 1px solid #ece0d0; border-radius: 10px;
