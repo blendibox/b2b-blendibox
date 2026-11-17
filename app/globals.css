@@ -27,7 +27,7 @@
         }
         
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-dmsans), system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
