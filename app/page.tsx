@@ -136,7 +136,7 @@ export default function LandingPage() {
       cor: cor || "a definir",
       personalizacao: comBordado ? "com bordado" : "sem bordado",
       logo: comBordado ? (logo || "a confirmar") : "—",
-      data: data || "sem data",
+      data: data ? dataBR(data) : "sem data",
       estimativaUnit: temEstimativa ? Number(unit.toFixed(2)) : null,
       estimativaTotal: temEstimativa ? Number(total.toFixed(2)) : null,
       prazo: typeof qtd === "number" ? prazoLabel : null,
@@ -207,7 +207,7 @@ export default function LandingPage() {
       `• Modelo: ${modeloSel ? modeloSel.nome : "Ainda não sei"}`,
       `• Quantidade: ${qtd} unidades`,
       `• Cor: ${cor || "a definir"}`,
-      `• Data necessária: ${data || "sem data definida"}`,
+      `• Data necessária: ${data ? dataBR(data) : "sem data definida"}`,
       `• Personalização: ${comBordado ? "Com bordado da logo" : "Sem personalização (bolsa lisa)"}`,
     ];
     if (comBordado) {
