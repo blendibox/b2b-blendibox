@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   async headers() {
+    // Em dev, não aplicar Cache-Control nos chunks do _next/static:
+    // "immutable" faz o navegador cachear o bundle antigo e quebra o HMR
+    // (o Next já avisa que headers() é ignorado no output: export, então
+    // isto não afeta o site publicado).
+    if (process.env.NODE_ENV === "development") return [];
     return [
       // ── Fontes, imagens e ícones — imutáveis (1 ano) ──────────────────────
       // O Next.js já faz hash no nome desses arquivos em build,

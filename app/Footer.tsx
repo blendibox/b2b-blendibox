@@ -12,28 +12,33 @@ export default function Footer() {
 	 {/* Seção Final de Contato */}
       <section className="cta-final" id="contato">
         <div className="cta-final-content">
-          <h2 style={{color:"#ffffff"}}>Transformamos sua Marca em uma Experiência Memorável!</h2>
-          <p>Entre em contato agora e receba uma proposta personalizada em até 48 horas.</p>
+          <h2 style={{color:"#ffffff"}}>Sua marca merece sair do papel.</h2>
+          <p>Vamos criar algo que as pessoas queiram levar com elas? Conte o que você está planejando — nossa equipe prepara uma proposta considerando modelo, quantidade, personalização e prazo. Resposta em até 48 horas.</p>
           <a 
 		  
 		   href="https://wa.me/+5519998061426?text=Tenho interesse em bolsas puffer personalizadas, e quero fazer um orçamento"
 		  className="cta-final-button"
 		  target="_blank"
 		  rel="noopener noreferrer"
-		  onClick={() => {
+		  onClick={(e) => {
+			if (typeof window !== 'undefined' && (window as any).openQuoteForm) {
+			  e.preventDefault();
+			  (window as any).openQuoteForm();
+			  return;
+			}
 			if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
 			  (window as any).gtag_report_conversion();
 			}
 		  }}
 	     >
-	        FALAR COM ESPECIALISTA
+	        FALAR COM NOSSA EQUIPE
 		</a>
         </div>
       </section>
 	  <footer className="footer">	  
 	   <div className="footer-container">      		 
 		  <div className="footer-logo">			
-			 <img src="/images/logoblendiboxbranco.png" ></img>
+			 <img src="/images/logoblendiboxbranco.png" alt="marca Blendibox"  ></img>
 		  </div>					
 	      <div className="footer-container">  
 		    <button className="hero-cta"><a href="/">HOME</a> </button> 

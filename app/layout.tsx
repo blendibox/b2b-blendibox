@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Cormorant_Garamond, Playfair_Display } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Playfair_Display, DM_Sans } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 
@@ -24,6 +24,14 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",      // ← ADICIONADO
+})
+
+// Fonte de corpo — legível, carregada de verdade (substitui o fallback serif fino)
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dmsans",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -236,15 +244,15 @@ export default function RootLayout({
             transform: translateY(0);
           }
 
-          /* Previne CLS do body enquanto fonte carrega */
+          /* Fonte de corpo legível (DM Sans) com fallback de sistema */
           body {
-            font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            font-family: var(--font-dmsans), system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
           }
         ` }} />
       </head>
 
       <body
-        className={`${cinzel.variable} ${cormorant.variable} ${playfair.variable} antialiased`}
+        className={`${cinzel.variable} ${cormorant.variable} ${playfair.variable} ${dmSans.variable} antialiased`}
       >
         {/*
           ✅ FIX 3: Google Ads com strategy="afterInteractive" — correto.
@@ -293,6 +301,17 @@ export default function RootLayout({
               });
               return false;
             }
+          `}
+        </Script>
+
+        {/* Microsoft Clarity — mapas de calor e gravações de sessão */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "zf73titecx");
           `}
         </Script>
       </body>

@@ -5,8 +5,12 @@ import { useEffect, useRef } from "react";
 
 export default function Menu() {
 
-  // Função para Scroll Suave (substitui o onclick nativo)
+  // Abre o form de orçamento (na home) ou rola até o contato (outras páginas)
   const scrollToContact = () => {
+    if (typeof window !== 'undefined' && (window as any).openQuoteForm) {
+      (window as any).openQuoteForm();
+      return;
+    }
     const element = document.getElementById('contato');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
