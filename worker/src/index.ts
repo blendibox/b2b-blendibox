@@ -70,7 +70,7 @@ export default {
     else if (modeloOk) detalhe = ` do modelo ${data.modelo}`;
     const empresaTxt = data.empresa ? ` para a ${data.empresa}` : "";
     const recado =
-      `Oi! \u{1F499} Aqui é da Blendibox. Vi que você começou a montar um orçamento` +
+      `Oi! Aqui é da Blendibox. Vi que você começou a montar um orçamento` +
       `${detalhe}${empresaTxt} no nosso site e talvez tenha ficado alguma dúvida. ` +
       `Posso te ajudar a finalizar? Qualquer coisa, estou por aqui!`;
 
