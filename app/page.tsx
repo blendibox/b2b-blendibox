@@ -18,7 +18,7 @@ const BORDADOS_POR_DIA = 40; // bordado: 5/hora × 8h — somado ao prazo quando
 
 // Endpoint do Worker (Cloudflare + Resend) que recebe a captura de lead e envia por e-mail.
 // Deixe "" enquanto o Worker não estiver no ar: a captura fica desativada e o form segue funcionando.
-const CAPTURE_ENDPOINT = "";
+const CAPTURE_ENDPOINT = "https://blendibox-lead-b2b.blendibox.workers.dev";
 
 const MODELOS = [
   { id: "maxi-tote",   nome: "Maxi Tote",   base: 150.0,  img: "/images/bolsa_maxitote_medidas.png",  dim: "40 × 35 cm",            use: "Mais espaço — campanhas e dia a dia." },
